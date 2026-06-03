@@ -1,49 +1,1140 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <title>Alissa Maxon Portfolio</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alissa Maxon — Artist & Game Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
+        :root {
+            --cream: #FAF7F2;
+            --parchment: #F2EDE4;
+            --rose: #D4A0A0;
+            --rose-light: #EDD5D5;
+            --rose-deep: #B07878;
+            --lavender: #C4B8D8;
+            --lavender-light: #E2DCF0;
+            --lavender-deep: #8E7FB0;
+            --sage: #A8BBA4;
+            --sage-light: #D5E2D3;
+            --sage-deep: #6E8C6A;
+            --dusty-blue: #A4B8CC;
+            --warm-brown: #7A6055;
+            --text-dark: #3D3030;
+            --text-mid: #6B5858;
+            --text-light: #9B8888;
+            --border: rgba(160, 130, 120, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-          background-color: #f4efe9;
-          color: #3b2f2f;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          margin: 0;
-          padding: 40px;
+            font-family: 'Jost', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            font-weight: 300;
+            overflow-x: hidden;
         }
-      
-        a {
-          color: #6b4f3f;
-          text-decoration: none;
-          font-weight: 500;
+
+        /* ── SVG background art ── */
+        .bg-art {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.38;
         }
-      
-        a:hover {
-          text-decoration: underline;
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 3rem;
+            background: rgba(250, 247, 242, 0.82);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+            .nav-logo span {
+                font-style: italic;
+                color: var(--rose-deep);
+            }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+            .nav-links a {
+                font-size: 0.78rem;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--text-mid);
+                text-decoration: none;
+                transition: color 0.25s;
+            }
+
+                .nav-links a:hover {
+                    color: var(--rose-deep);
+                }
+
+        /* ── SECTIONS ── */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8rem 3rem 4rem 8rem;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--rose-deep);
+            margin-bottom: 1rem;
+        }
+
+        .hero-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 300;
+            line-height: 1.0;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+            .hero-name em {
+                font-style: italic;
+                color: var(--rose-deep);
+            }
+
+        .hero-alias {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-mid);
+            max-width: 420px;
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-roles {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .role-pill {
+            padding: 0.35rem 1rem;
+            border-radius: 99px;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid;
+        }
+
+            .role-pill.art {
+                border-color: var(--rose);
+                color: var(--rose-deep);
+                background: var(--rose-light);
+            }
+
+            .role-pill.game {
+                border-color: var(--lavender);
+                color: var(--lavender-deep);
+                background: var(--lavender-light);
+            }
+
+            .role-pill.design {
+                border-color: var(--sage);
+                color: var(--sage-deep);
+                background: var(--sage-light);
+            }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 99px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.25s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--rose-deep);
+            color: #fff;
+        }
+
+            .btn-primary:hover {
+                background: var(--warm-brown);
+            }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--rose-deep);
+            color: var(--rose-deep);
+        }
+
+            .btn-outline:hover {
+                background: var(--rose-light);
+            }
+
+        /* ── SECTION COMMON ── */
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 3rem;
+        }
+
+        .section-header {
+            margin-bottom: 3.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            color: var(--text-dark);
+        }
+
+            .section-title em {
+                font-style: italic;
+                color: var(--rose-deep);
+            }
+
+        .section-divider {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── ART PORTFOLIO ── */
+        #art {
+            background: transparent;
+        }
+
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .art-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--parchment);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+            .art-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 40px rgba(120, 80, 80, 0.12);
+            }
+
+        .art-card-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, var(--rose-light), var(--lavender-light));
+        }
+
+        .art-card-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .art-card-body {
+            padding: 1rem 1.2rem;
+        }
+
+        .art-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .art-card-sub {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            letter-spacing: 0.06em;
+        }
+
+        /* ── GAME PORTFOLIO ── */
+        #games {
+            background: rgba(196, 184, 216, 0.08);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .game-card {
+            background: var(--parchment);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            padding: 1.75rem;
+            transition: transform 0.3s;
+        }
+
+            .game-card:hover {
+                transform: translateY(-3px);
+            }
+
+        .game-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+            .game-icon.lavender {
+                background: var(--lavender-light);
+            }
+
+            .game-icon.sage {
+                background: var(--sage-light);
+            }
+
+            .game-icon.rose {
+                background: var(--rose-light);
+            }
+
+        .game-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .game-card-engine {
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--lavender-deep);
+        }
+
+        .game-card-desc {
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+            margin-bottom: 1.25rem;
+        }
+
+        .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .game-tag {
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.7rem;
+            border-radius: 99px;
+            background: var(--lavender-light);
+            color: var(--lavender-deep);
+            border: 1px solid var(--lavender);
+        }
+
+        .game-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .game-link {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--lavender-deep);
+            text-decoration: none;
+            border-bottom: 1px solid var(--lavender);
+            padding-bottom: 1px;
+            transition: color 0.2s;
+        }
+
+            .game-link:hover {
+                color: var(--text-dark);
+            }
+
+        /* ── GRAPHIC DESIGN ── */
+        #design {
+            background: transparent;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+        }
+
+        .design-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+            .design-card:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .design-card:nth-child(4) {
+                grid-column: span 2;
+            }
+
+        .design-placeholder {
+            width: 100%;
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-light);
+            transition: opacity 0.3s;
+        }
+
+        .design-card:nth-child(1) .design-placeholder {
+            aspect-ratio: unset;
+            min-height: 380px;
+        }
+
+        .design-card:hover .design-placeholder {
+            opacity: 0.7;
+        }
+
+        .design-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(to top, rgba(61,48,48,0.6), transparent);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .design-card:hover .design-overlay {
+            transform: translateY(0);
+        }
+
+        .design-overlay-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: #fff;
+        }
+
+        /* placeholder gradient backgrounds */
+        .bg-rose-grad {
+            background: linear-gradient(135deg, #EDD5D5, #D4A0A0, #C4B8D8);
+        }
+
+        .bg-lav-grad {
+            background: linear-gradient(135deg, #E2DCF0, #C4B8D8, #A8BBA4);
+        }
+
+        .bg-sage-grad {
+            background: linear-gradient(135deg, #D5E2D3, #A8BBA4, #A4B8CC);
+        }
+
+        .bg-blue-grad {
+            background: linear-gradient(135deg, #C6D8E8, #A4B8CC, #C4B8D8);
+        }
+
+        .bg-warm-grad {
+            background: linear-gradient(135deg, #F2EDE4, #EDD5D5, #D4A0A0);
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            background: rgba(168, 187, 164, 0.1);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-portrait {
+            aspect-ratio: 3/4;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: linear-gradient(160deg, var(--rose-light), var(--lavender-light), var(--sage-light));
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+        }
+
+        .portrait-placeholder {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-group h4 {
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--rose-deep);
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-group ul {
+            list-style: none;
+        }
+
+        .skill-group li {
+            font-size: 0.85rem;
+            color: var(--text-mid);
+            line-height: 1.9;
+        }
+
+        /* ── LINKS / CONTACT ── */
+        #links {
+            background: transparent;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .link-card {
+            background: var(--parchment);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            padding: 1.75rem 1.5rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+            .link-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 30px rgba(120, 80, 80, 0.1);
+            }
+
+        .link-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .link-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .link-handle {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            letter-spacing: 0.04em;
+        }
+
+        .link-card.yt .link-icon-bg {
+            color: #b07878;
+        }
+
+        .link-card.ig .link-icon-bg {
+            color: #8e7fb0;
+        }
+
+        .link-card.shop .link-icon-bg {
+            color: #6e8c6a;
+        }
+
+        .contact-block {
+            text-align: center;
+            padding: 3rem;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--parchment);
+        }
+
+            .contact-block h3 {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 2rem;
+                font-weight: 300;
+                margin-bottom: 0.75rem;
+                color: var(--text-dark);
+            }
+
+            .contact-block p {
+                font-size: 0.9rem;
+                color: var(--text-mid);
+                margin-bottom: 1.75rem;
+                line-height: 1.7;
+            }
+
+        .contact-email {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--rose-deep);
+            text-decoration: none;
+            border-bottom: 1px solid var(--rose);
+            padding-bottom: 2px;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid var(--border);
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+
+            footer a {
+                color: var(--rose-deep);
+                text-decoration: none;
+            }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+            }
+
+            #hero {
+                padding: 7rem 1.5rem 4rem;
+            }
+
+            .section-inner {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .design-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .design-card:nth-child(1) {
+                grid-column: span 2;
+            }
+
+            .design-card:nth-child(4) {
+                grid-column: span 2;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
         }
     </style>
-  </head>
-  
-  <body>
-    <div style="max-width: 720px; margin: auto;">
-    <hr style="max-width:600px;margin:24px auto;opacity:0.2;">
+</head>
+<body>
 
-    <nav style="margin-bottom:30px; font-weight:600;">
-      <a href="index.html" style="margin-right:20px;">Home</a>
-      <a href="art.html">Art</a>
+    <!-- ── Decorative SVG background ── -->
+    <svg class="bg-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <!-- Soft watercolor wash blobs -->
+        <defs>
+            <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EDD5D5" stop-opacity="0.7" />
+                <stop offset="100%" stop-color="#EDD5D5" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E2DCF0" stop-opacity="0.65" />
+                <stop offset="100%" stop-color="#E2DCF0" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="blob3" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#D5E2D3" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#D5E2D3" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="blob4" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C6D8E8" stop-opacity="0.55" />
+                <stop offset="100%" stop-color="#C6D8E8" stop-opacity="0" />
+            </radialGradient>
+            <filter id="blur-heavy">
+                <feGaussianBlur stdDeviation="60" />
+            </filter>
+        </defs>
+
+        <!-- Large soft blobs - watercolor style -->
+        <ellipse cx="180" cy="160" rx="320" ry="280" fill="url(#blob1)" filter="url(#blur-heavy)" />
+        <ellipse cx="1280" cy="220" rx="350" ry="300" fill="url(#blob2)" filter="url(#blur-heavy)" />
+        <ellipse cx="700" cy="700" rx="400" ry="320" fill="url(#blob3)" filter="url(#blur-heavy)" />
+        <ellipse cx="1100" cy="750" rx="280" ry="250" fill="url(#blob4)" filter="url(#blur-heavy)" />
+        <ellipse cx="300" cy="600" rx="250" ry="220" fill="url(#blob2)" filter="url(#blur-heavy)" />
+
+        <!-- Delicate botanical line work -->
+        <!-- Stem + leaves, top-left -->
+        <g opacity="0.3" stroke="#B07878" stroke-width="1" fill="none">
+            <path d="M 80 500 Q 100 420 120 350 Q 140 280 130 200" />
+            <path d="M 120 350 Q 80 310 40 290" />
+            <path d="M 110 310 Q 145 270 165 240" />
+            <path d="M 100 390 Q 60 380 30 360" />
+            <!-- tiny petals -->
+            <circle cx="130" cy="200" r="3" fill="#D4A0A0" stroke="none" opacity="0.5" />
+            <circle cx="126" cy="193" r="2" fill="#D4A0A0" stroke="none" opacity="0.4" />
+            <circle cx="134" cy="193" r="2" fill="#EDD5D5" stroke="none" opacity="0.4" />
+        </g>
+
+        <!-- Stem + leaves, top-right -->
+        <g opacity="0.25" stroke="#8E7FB0" stroke-width="1" fill="none">
+            <path d="M 1360 400 Q 1340 320 1310 240 Q 1290 180 1300 120" />
+            <path d="M 1310 240 Q 1350 210 1390 195" />
+            <path d="M 1320 290 Q 1280 270 1260 250" />
+            <circle cx="1300" cy="120" r="4" fill="#C4B8D8" stroke="none" opacity="0.5" />
+            <circle cx="1295" cy="113" r="2.5" fill="#E2DCF0" stroke="none" opacity="0.4" />
+            <circle cx="1305" cy="113" r="2.5" fill="#C4B8D8" stroke="none" opacity="0.4" />
+        </g>
+
+        <!-- Bottom right botanical -->
+        <g opacity="0.22" stroke="#6E8C6A" stroke-width="0.8" fill="none">
+            <path d="M 1400 900 Q 1380 840 1350 780 Q 1320 720 1340 660" />
+            <path d="M 1350 780 Q 1390 755 1420 740" />
+            <path d="M 1345 730 Q 1305 715 1285 700" />
+        </g>
+
+        <!-- Scattered tiny dots (pollen / sparkle) -->
+        <g fill="#D4A0A0" opacity="0.35">
+            <circle cx="220" cy="280" r="2" />
+            <circle cx="350" cy="180" r="1.5" />
+            <circle cx="480" cy="320" r="1" />
+            <circle cx="600" cy="150" r="1.5" />
+            <circle cx="900" cy="200" r="2" />
+            <circle cx="1050" cy="160" r="1" />
+            <circle cx="1200" cy="300" r="1.5" />
+        </g>
+        <g fill="#C4B8D8" opacity="0.35">
+            <circle cx="150" cy="650" r="1.5" />
+            <circle cx="400" cy="750" r="2" />
+            <circle cx="650" cy="820" r="1" />
+            <circle cx="800" cy="700" r="1.5" />
+            <circle cx="1000" cy="800" r="2" />
+            <circle cx="1250" cy="680" r="1" />
+        </g>
+
+        <!-- Loose gestural brushstroke arcs -->
+        <path d="M 0 450 Q 200 380 400 420 Q 600 460 800 400 Q 1000 340 1200 380 Q 1350 410 1440 360"
+              stroke="#D4A0A0" stroke-width="0.6" fill="none" opacity="0.2" stroke-dasharray="4 8" />
+        <path d="M 0 600 Q 250 560 500 590 Q 750 620 1000 570 Q 1200 530 1440 560"
+              stroke="#C4B8D8" stroke-width="0.6" fill="none" opacity="0.18" stroke-dasharray="3 10" />
+    </svg>
+
+    <!-- ── Navigation ── -->
+    <nav>
+        <a href="#hero" class="nav-logo">Alissa <em>Maxon</em></a>
+        <ul class="nav-links">
+            <li><a href="#art">Art</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#design">Design</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#links">Contact</a></li>
+        </ul>
     </nav>
 
-    <h1>Alissa Maxon</h1>
-    <h2>Artist • Game Developer • Graphic Designer</h2>
+    <!-- ── Hero ── -->
+    <section id="hero">
+        <p class="hero-eyebrow">Portfolio</p>
+        <h1 class="hero-name">Alissa<br /><em>Maxon</em></h1>
+        <p class="hero-alias">alissabear01</p>
+        <p class="hero-tagline">Artist, game developer & graphic designer creating worlds with paint, pixels, and code.</p>
+        <div class="hero-roles">
+            <span class="role-pill art">Fine Art & Illustration</span>
+            <span class="role-pill game">Game Development</span>
+            <span class="role-pill design">Graphic Design</span>
+        </div>
+        <div class="hero-cta">
+            <a href="#art" class="btn btn-primary">View My Work</a>
+            <a href="#links" class="btn btn-outline">Get In Touch</a>
+        </div>
+    </section>
 
+    <!-- ── Art Portfolio ── -->
+    <section id="art">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">Art &amp; <em>Illustration</em></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="art-grid">
+                <!-- Replace art-card-placeholder divs with <img> tags once you have artwork -->
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-lav-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-sage-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-blue-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-warm-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Piece Title</p>
+                        <p class="art-card-sub">Medium · Year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <img src="assets/img/business-casual.png" style="width:280px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.15);" alt="Alissa Maxon portrait">
+    <!-- ── Game Design Portfolio ── -->
+    <section id="games">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">02</span>
+                <h2 class="section-title">Game <em>Development</em></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="game-grid">
+                <!-- Game card 1 — replace with your real project details -->
+                <div class="game-card">
+                    <div class="game-card-header">
+                        <div class="game-icon lavender">🎮</div>
+                        <div>
+                            <p class="game-card-title">Project Title</p>
+                            <p class="game-card-engine">Unity · 2D Platformer</p>
+                        </div>
+                    </div>
+                    <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
+                    <div class="game-tags">
+                        <span class="game-tag">C#</span>
+                        <span class="game-tag">Unity</span>
+                        <span class="game-tag">Solo Dev</span>
+                    </div>
+                    <div class="game-links">
+                        <a href="#" class="game-link">Play</a>
+                        <a href="#" class="game-link">GitHub</a>
+                        <a href="#" class="game-link">Video</a>
+                    </div>
+                </div>
 
-    
-    <p>Hello! I’m Alissa, a freelance artist and game developer based in California. I’m currently pursuing a B.A. in Art and B.S. in Computer Science, where I’m refining both my creative and technical skills. 
-      Through my studies and freelance work, I’m developing my skills in animation, illustration, and programming to bring imaginative worlds to life.</p>
+                <!-- Game card 2 -->
+                <div class="game-card">
+                    <div class="game-card-header">
+                        <div class="game-icon sage">🌿</div>
+                        <div>
+                            <p class="game-card-title">Project Title</p>
+                            <p class="game-card-engine">Godot · RPG</p>
+                        </div>
+                    </div>
+                    <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
+                    <div class="game-tags">
+                        <span class="game-tag">GDScript</span>
+                        <span class="game-tag">Godot 4</span>
+                        <span class="game-tag">Pixel Art</span>
+                    </div>
+                    <div class="game-links">
+                        <a href="#" class="game-link">Play</a>
+                        <a href="#" class="game-link">GitHub</a>
+                    </div>
+                </div>
 
-    </div>
-  </body>
-  
+                <!-- Game card 3 -->
+                <div class="game-card">
+                    <div class="game-card-header">
+                        <div class="game-icon rose">✨</div>
+                        <div>
+                            <p class="game-card-title">Project Title</p>
+                            <p class="game-card-engine">Game Jam Entry</p>
+                        </div>
+                    </div>
+                    <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
+                    <div class="game-tags">
+                        <span class="game-tag">48hr Jam</span>
+                        <span class="game-tag">Narrative</span>
+                    </div>
+                    <div class="game-links">
+                        <a href="#" class="game-link">Play on itch.io</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Graphic Design Portfolio ── -->
+    <section id="design">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">03</span>
+                <h2 class="section-title">Graphic <em>Design</em></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="design-grid">
+                <div class="design-card">
+                    <div class="design-placeholder bg-rose-grad">Featured project</div>
+                    <div class="design-overlay"><p class="design-overlay-title">Project Title — Branding</p></div>
+                </div>
+                <div class="design-card">
+                    <div class="design-placeholder bg-lav-grad">Add design</div>
+                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
+                </div>
+                <div class="design-card">
+                    <div class="design-placeholder bg-sage-grad">Add design</div>
+                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
+                </div>
+                <div class="design-card">
+                    <div class="design-placeholder bg-blue-grad">Add design</div>
+                    <div class="design-overlay"><p class="design-overlay-title">Project Title — Poster</p></div>
+                </div>
+                <div class="design-card">
+                    <div class="design-placeholder bg-warm-grad">Add design</div>
+                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">About <em>Me</em></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-inner">
+                <div class="about-portrait">
+                    <p class="portrait-placeholder">Your photo<br />or illustration<br />here</p>
+                </div>
+                <div class="about-text">
+                    <p>Hi, I'm Alissa — an artist, game developer, and graphic designer with a passion for storytelling through visual mediums. Whether I'm painting a scene, building a game world, or crafting a brand identity, I bring the same care and creative curiosity to everything I make.</p>
+                    <p>I'm currently open to opportunities in game studios, creative agencies, and design teams where I can contribute both my technical skills and my illustrative sensibility.</p>
+                    <p>When I'm not working you can find me on YouTube and Instagram as <em>alissabear01</em>, sharing my creative process and the work I love.</p>
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h4>Art & Illustration</h4>
+                            <ul>
+                                <li>Oil & acrylic painting</li>
+                                <li>Digital illustration</li>
+                                <li>Character design</li>
+                                <li>Concept art</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Game Development</h4>
+                            <ul>
+                                <li>Unity / C#</li>
+                                <li>Godot / GDScript</li>
+                                <li>Game design</li>
+                                <li>Level design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Design & Tools</h4>
+                            <ul>
+                                <li>Adobe Illustrator</li>
+                                <li>Photoshop</li>
+                                <li>Procreate</li>
+                                <li>Figma</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Links & Contact ── -->
+    <section id="links">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">05</span>
+                <h2 class="section-title">Find <em>Me</em></h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="links-grid">
+                <a href="https://youtube.com/@alissabear01" target="_blank" rel="noopener" class="link-card yt">
+                    <div class="link-icon">▶️</div>
+                    <p class="link-name">YouTube</p>
+                    <p class="link-handle">@alissabear01</p>
+                </a>
+                <a href="https://instagram.com/alissabear01" target="_blank" rel="noopener" class="link-card ig">
+                    <div class="link-icon">📸</div>
+                    <p class="link-name">Instagram</p>
+                    <p class="link-handle">@alissabear01</p>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="link-card shop">
+                    <div class="link-icon">🛍️</div>
+                    <p class="link-name">Shop</p>
+                    <p class="link-handle">alissabear01's store</p>
+                </a>
+            </div>
+            <div class="contact-block">
+                <h3>Let's work together</h3>
+                <p>Open to full-time roles, freelance projects, and collaborations.<br />I'd love to hear about what you're building.</p>
+                <!-- Replace with your real email -->
+                <a href="mailto:hello@alissabear01.com" class="contact-email">hello@alissabear01.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <p>© 2026 Alissa Maxon</p>
+        <p>Designed &amp; built by <a href="#hero">alissabear01</a></p>
+    </footer>
+
+</body>
 </html>
