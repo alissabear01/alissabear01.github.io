@@ -43,7 +43,7 @@ alissabear01.github.io/
 ## Contact
 
 - 📧 alissabear01@gmail.com
-- 🎨 Instagram: [@alissabear01](https://instagram.com/alissabear01)
+- 🎨 Instagram: [@alissabear01](https://instagram.com/ab01.art)
 - ▶️ YouTube: [@alissabear01](https://youtube.com/@alissabear01)
 - 🛍️ Shop: *(pending creation)*
 
