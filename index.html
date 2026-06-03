@@ -279,6 +279,39 @@
             background: transparent;
         }
 
+        .art-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.4rem 1.1rem;
+            border-radius: 99px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-mid);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+            .filter-btn:hover {
+                border-color: var(--rose);
+                color: var(--rose-deep);
+                background: var(--rose-light);
+            }
+
+            .filter-btn.active {
+                background: var(--rose-deep);
+                border-color: var(--rose-deep);
+                color: #fff;
+            }
+
         .art-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -290,13 +323,17 @@
             overflow: hidden;
             background: var(--parchment);
             border: 1px solid var(--border);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
             cursor: pointer;
         }
 
             .art-card:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 12px 40px rgba(120, 80, 80, 0.12);
+            }
+
+            .art-card.hidden {
+                display: none;
             }
 
         .art-card-img {
@@ -335,6 +372,36 @@
             font-size: 0.75rem;
             color: var(--text-light);
             letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+
+        .art-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.4rem;
+        }
+
+        .art-card-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.15rem 0.55rem;
+            border-radius: 99px;
+            background: var(--rose-light);
+            color: var(--rose-deep);
+            border: 1px solid var(--rose);
+        }
+
+        .art-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            display: none;
         }
 
         /* ── GAME PORTFOLIO ── */
@@ -891,53 +958,138 @@
                 <h2 class="section-title">Art &amp; <em>Illustration</em></h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="art-grid">
-                <!-- Replace art-card-placeholder divs with <img> tags once you have artwork -->
-                <div class="art-card">
+
+            <!-- Filter buttons -->
+            <div class="art-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="oil-painting">Oil Painting</button>
+                <button class="filter-btn" data-filter="fan-art">Fan Art</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="traditional">Traditional</button>
+                <button class="filter-btn" data-filter="sketchbook">Sketchbook</button>
+            </div>
+
+            <div class="art-grid" id="art-grid">
+
+                <!--
+                  HOW TO ADD YOUR ARTWORK:
+                  1. Put your image file in assets/art/
+                  2. Copy one of the art-card blocks below
+                  3. Replace the placeholder div with:
+                     <img src="assets/art/your-file.jpg" alt="Piece title" class="art-card-img">
+                  4. Update the title, medium/year, and tags
+                  5. Set data-tags to whichever apply (space-separated):
+                     portraits  oil-painting  fan-art  digital  traditional  sketchbook
+                -->
+                <!-- Example: Gnaw Pikachu oil painting -->
+                <div class="art-card" data-tags="oil-painting fan-art">
+                    <div class="art-card-placeholder bg-lav-grad">Add your artwork here</div>
+                    <div class="art-card-body">
+                        <p class="art-card-title">Gnaw Pikachu</p>
+                        <p class="art-card-sub">Oil on canvas · 2024</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait example -->
+                <div class="art-card" data-tags="portraits traditional">
                     <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
                     <div class="art-card-body">
                         <p class="art-card-title">Piece Title</p>
                         <p class="art-card-sub">Medium · Year</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Portraits</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
                     </div>
                 </div>
-                <div class="art-card">
-                    <div class="art-card-placeholder bg-lav-grad">Add your artwork here</div>
-                    <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
-                    </div>
-                </div>
-                <div class="art-card">
+
+                <!-- Digital example -->
+                <div class="art-card" data-tags="digital">
                     <div class="art-card-placeholder bg-sage-grad">Add your artwork here</div>
                     <div class="art-card-body">
                         <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
+                        <p class="art-card-sub">Digital · Year</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                        </div>
                     </div>
                 </div>
-                <div class="art-card">
+
+                <!-- Fan art example -->
+                <div class="art-card" data-tags="fan-art digital">
                     <div class="art-card-placeholder bg-blue-grad">Add your artwork here</div>
                     <div class="art-card-body">
                         <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
+                        <p class="art-card-sub">Digital · Year</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Fan Art</span>
+                            <span class="art-card-tag">Digital</span>
+                        </div>
                     </div>
                 </div>
-                <div class="art-card">
+
+                <!-- Sketchbook example -->
+                <div class="art-card" data-tags="sketchbook traditional">
                     <div class="art-card-placeholder bg-warm-grad">Add your artwork here</div>
                     <div class="art-card-body">
                         <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
+                        <p class="art-card-sub">Pencil · Year</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Sketchbook</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
                     </div>
                 </div>
-                <div class="art-card">
+
+                <!-- Oil portrait example -->
+                <div class="art-card" data-tags="portraits oil-painting">
                     <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
                     <div class="art-card-body">
                         <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
+                        <p class="art-card-sub">Oil on canvas · Year</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Portraits</span>
+                            <span class="art-card-tag">Oil Painting</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Empty state message -->
+                <p class="art-empty" id="art-empty">No pieces in this category yet — check back soon!</p>
+
             </div>
         </div>
     </section>
+
+    <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const artCards = document.querySelectorAll('#art-grid .art-card');
+    const artEmpty = document.getElementById('art-empty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visible = 0;
+
+        artCards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          const show = filter === 'all' || tags.split(' ').includes(filter);
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        artEmpty.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+    </script>
 
     <!-- ── Game Design Portfolio ── -->
     <section id="games">
