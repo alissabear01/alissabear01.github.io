@@ -42,7 +42,7 @@ alissabear01.github.io/
 
 ## Contact
 
-- 📧 hello@alissabear01.com *(replace with your real email)*
+- 📧 alissabear01@gmail.com
 - 🎨 Instagram: [@alissabear01](https://instagram.com/alissabear01)
 - ▶️ YouTube: [@alissabear01](https://youtube.com/@alissabear01)
 - 🛍️ Shop: *(pending creation)*
