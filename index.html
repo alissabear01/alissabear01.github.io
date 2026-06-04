@@ -614,6 +614,26 @@
                 transform: translateY(-3px);
             }
 
+        .game-card.wip {
+            border-style: dashed;
+            opacity: 0.75;
+        }
+
+        .wip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+            background: var(--sage-light);
+            color: var(--sage-deep);
+            border: 1px solid var(--sage);
+            margin-bottom: 1rem;
+        }
+
         .game-card-header {
             display: flex;
             align-items: center;
@@ -1573,16 +1593,16 @@
             </div>
             <div class="game-grid">
                 <div class="game-card">
-                    <div class="game-card-header"><div class="game-icon lavender">🎮</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Unity · 2D Platformer</p></div></div>
-                    <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
-                    <div class="game-tags"><span class="game-tag">C#</span><span class="game-tag">Unity</span><span class="game-tag">Solo Dev</span></div>
-                    <div class="game-links"><a href="#" class="game-link">Play</a><a href="#" class="game-link">GitHub</a><a href="#" class="game-link">Video</a></div>
+                    <div class="game-card-header"><div class="game-icon lavender">👻</div><div><p class="game-card-title">Yurei</p><p class="game-card-engine">Unity · Narrative RPG</p></div></div>
+                    <p class="game-card-desc">A narrative RPG I built solo for my portfolio class, based on a story I wrote in a previous storyboarding course. I built a dialogue manager in C# that hooks into Ink — a branching narrative tool — so character choices actually affect the flow of the story. I drew all the characters myself (with a little help from my sister on two of them), plus the shoji screens, tatami floors, and a full set of animations for each character. The player has five animations alone. Still in development, but the foundation — dialogue system, character art, and story — is solid.</p>
+                    <div class="game-tags"><span class="game-tag">C#</span><span class="game-tag">Unity</span><span class="game-tag">Ink</span><span class="game-tag">Solo Dev</span><span class="game-tag">2D</span></div>
+                    <div class="game-links"><a href="https://youtu.be/B4AOeeunu8k" target="_blank" rel="noopener" class="game-link">Watch Demo</a></div>
                 </div>
-                <div class="game-card">
-                    <div class="game-card-header"><div class="game-icon sage">🌿</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Godot · RPG</p></div></div>
-                    <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
-                    <div class="game-tags"><span class="game-tag">GDScript</span><span class="game-tag">Godot 4</span><span class="game-tag">Pixel Art</span></div>
-                    <div class="game-links"><a href="#" class="game-link">Play</a><a href="#" class="game-link">GitHub</a></div>
+                <div class="game-card wip">
+                    <span class="wip-badge">🚧 In Progress</span>
+                    <div class="game-card-header"><div class="game-icon sage">🎮</div><div><p class="game-card-title">Next Project</p><p class="game-card-engine">Coming Soon</p></div></div>
+                    <p class="game-card-desc">Something new is in the works. Check back soon.</p>
+                    <div class="game-tags"><span class="game-tag">TBD</span></div>
                 </div>
                 <div class="game-card">
                     <div class="game-card-header"><div class="game-icon rose">✨</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Game Jam Entry</p></div></div>
