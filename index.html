@@ -973,34 +973,20 @@
             <div class="art-grid" id="art-grid">
 
                 <!--
-                  HOW TO ADD YOUR ARTWORK:
-                  1. Put your image file in assets/art/
-                  2. Copy one of the art-card blocks below
-                  3. Replace the placeholder div with:
-                     <img src="assets/art/your-file.jpg" alt="Piece title" class="art-card-img">
-                  4. Update the title, medium/year, and tags
-                  5. Set data-tags to whichever apply (space-separated):
-                     portraits  oil-painting  fan-art  digital  traditional  sketchbook
-                -->
-                <!-- Example: Gnaw Pikachu oil painting -->
-                <div class="art-card" data-tags="oil-painting fan-art">
-                    <div class="art-card-placeholder bg-lav-grad">Add your artwork here</div>
-                    <div class="art-card-body">
-                        <p class="art-card-title">Gnaw Pikachu</p>
-                        <p class="art-card-sub">Oil on canvas · 2024</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Oil Painting</span>
-                            <span class="art-card-tag">Fan Art</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portrait example -->
+      HOW TO ADD YOUR ARTWORK:
+      1. Put your image file in assets/art/
+      2. Copy one of the art-card blocks below
+      3. Replace the placeholder div with:
+         <img src="assets/art/your-file.jpg" alt="Piece title" class="art-card-img">
+      4. Update the title, medium/year, and tags
+      5. Set data-tags to whichever apply (space-separated):
+         portraits  oil-painting  fan-art  digital  traditional  sketchbook
+    -->
                 <div class="art-card" data-tags="portraits traditional">
-                    <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
+                    <img src="assets/art/dad.jpg" alt="Portrait of Dad" class="art-card-img">
                     <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Medium · Year</p>
+                        <p class="art-card-title">Dad</p>
+                        <p class="art-card-sub">Charcoal · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Portraits</span>
                             <span class="art-card-tag">Traditional</span>
@@ -1008,37 +994,121 @@
                     </div>
                 </div>
 
-                <!-- Digital example -->
-                <div class="art-card" data-tags="digital">
-                    <div class="art-card-placeholder bg-sage-grad">Add your artwork here</div>
+                <div class="art-card" data-tags="portraits traditional fan-art">
+                    <img src="assets/art/gandalf.jpg" alt="Gandalf" class="art-card-img">
                     <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Digital · Year</p>
+                        <p class="art-card-title">Gandalf</p>
+                        <p class="art-card-sub">Pencil · Traditional</p>
                         <div class="art-card-tags">
-                            <span class="art-card-tag">Digital</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fan art example -->
-                <div class="art-card" data-tags="fan-art digital">
-                    <div class="art-card-placeholder bg-blue-grad">Add your artwork here</div>
-                    <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Digital · Year</p>
-                        <div class="art-card-tags">
+                            <span class="art-card-tag">Portraits</span>
+                            <span class="art-card-tag">Traditional</span>
                             <span class="art-card-tag">Fan Art</span>
-                            <span class="art-card-tag">Digital</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sketchbook example -->
-                <div class="art-card" data-tags="sketchbook traditional">
-                    <div class="art-card-placeholder bg-warm-grad">Add your artwork here</div>
+                <div class="art-card" data-tags="oil-painting fan-art">
+                    <img src="assets/art/gnawPikachu.jpg" alt="Gnaw Pikachu" class="art-card-img">
                     <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Pencil · Year</p>
+                        <p class="art-card-title">Gnaw Pikachu</p>
+                        <p class="art-card-sub">Oil on Canvas · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="oil-painting traditional">
+                    <img src="assets/art/greenFabricStillLife.jpg" alt="Green Fabric Still Life" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Green Fabric Still Life</p>
+                        <p class="art-card-sub">Oil on Canvas · Traditional</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art">
+                    <img src="assets/art/maomao.png" alt="Mao Mao" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Mao Mao</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art">
+                    <img src="assets/art/Nami_LC.png" alt="Nami / League of Legends" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Nami</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art portraits">
+                    <img src="assets/art/quarterjade.jpg" alt="Quarterjade" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Quarterjade</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                            <span class="art-card-tag">Portraits</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="traditional sketchbook">
+                    <img src="assets/art/paperAirplanes.jpg" alt="Paper Airplanes" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Paper Airplanes</p>
+                        <p class="art-card-sub">Graphite · Traditional</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Traditional</span>
+                            <span class="art-card-tag">Sketchbook</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="oil-painting traditional">
+                    <img src="assets/art/rainbowBridge.jpg" alt="Rainbow Bridge — Van Gogh Study" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Rainbow Bridge</p>
+                        <p class="art-card-sub">Oil on Canvas · Van Gogh Style</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art">
+                    <img src="assets/art/terraria.png" alt="Terraria" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Terraria</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="sketchbook traditional">
+                    <img src="assets/art/whiteRaven.jpg" alt="White Raven" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">White Raven</p>
+                        <p class="art-card-sub">Pen · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Sketchbook</span>
                             <span class="art-card-tag">Traditional</span>
@@ -1046,20 +1116,6 @@
                     </div>
                 </div>
 
-                <!-- Oil portrait example -->
-                <div class="art-card" data-tags="portraits oil-painting">
-                    <div class="art-card-placeholder bg-rose-grad">Add your artwork here</div>
-                    <div class="art-card-body">
-                        <p class="art-card-title">Piece Title</p>
-                        <p class="art-card-sub">Oil on canvas · Year</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Portraits</span>
-                            <span class="art-card-tag">Oil Painting</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Empty state message -->
                 <p class="art-empty" id="art-empty">No pieces in this category yet — check back soon!</p>
 
             </div>
