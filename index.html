@@ -44,9 +44,9 @@
             color: var(--text-dark);
             font-weight: 300;
             overflow-x: hidden;
+            font-size: 16px;
         }
 
-        /* ── SVG background art ── */
         .bg-art {
             position: fixed;
             top: 0;
@@ -76,14 +76,14 @@
 
         .nav-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 0.04em;
             color: var(--text-dark);
             text-decoration: none;
         }
 
-            .nav-logo span {
+            .nav-logo em {
                 font-style: italic;
                 color: var(--rose-deep);
             }
@@ -95,7 +95,7 @@
         }
 
             .nav-links a {
-                font-size: 0.78rem;
+                font-size: 0.85rem;
                 letter-spacing: 0.14em;
                 text-transform: uppercase;
                 color: var(--text-mid);
@@ -107,7 +107,6 @@
                     color: var(--rose-deep);
                 }
 
-        /* ── SECTIONS ── */
         section {
             position: relative;
             z-index: 1;
@@ -124,7 +123,7 @@
         }
 
         .hero-eyebrow {
-            font-size: 0.72rem;
+            font-size: 0.85rem;
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--rose-deep);
@@ -147,7 +146,7 @@
 
         .hero-alias {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-style: italic;
             color: var(--text-light);
             margin-bottom: 1.8rem;
@@ -155,7 +154,7 @@
         }
 
         .hero-tagline {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 300;
             color: var(--text-mid);
             max-width: 520px;
@@ -171,9 +170,9 @@
         }
 
         .role-pill {
-            padding: 0.35rem 1rem;
+            padding: 0.4rem 1.1rem;
             border-radius: 99px;
-            font-size: 0.72rem;
+            font-size: 0.82rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             border: 1px solid;
@@ -204,10 +203,10 @@
         }
 
         .btn {
-            padding: 0.7rem 1.8rem;
+            padding: 0.75rem 2rem;
             border-radius: 99px;
             font-family: 'Jost', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.88rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             text-decoration: none;
@@ -250,7 +249,7 @@
         }
 
         .section-label {
-            font-size: 0.68rem;
+            font-size: 0.78rem;
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--text-light);
@@ -258,7 +257,7 @@
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
             font-weight: 300;
             color: var(--text-dark);
         }
@@ -274,7 +273,7 @@
             background: var(--border);
         }
 
-        /* ── ART PORTFOLIO ── */
+        /* ── ART FILTERS ── */
         #art {
             background: transparent;
         }
@@ -287,10 +286,10 @@
         }
 
         .filter-btn {
-            padding: 0.4rem 1.1rem;
+            padding: 0.45rem 1.2rem;
             border-radius: 99px;
             font-family: 'Jost', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.82rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             border: 1px solid var(--border);
@@ -312,10 +311,12 @@
                 color: #fff;
             }
 
+        /* ── ART GRID ── */
         .art-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .art-card {
@@ -323,7 +324,7 @@
             overflow: hidden;
             background: var(--parchment);
             border: 1px solid var(--border);
-            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
 
@@ -352,20 +353,20 @@
             justify-content: center;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-light);
         }
 
         .art-card-body {
-            padding: 1rem 1.2rem;
+            padding: 1.1rem 1.3rem;
         }
 
         .art-card-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             font-weight: 400;
             color: var(--text-dark);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
         }
 
         .art-card-date {
@@ -373,11 +374,11 @@
             font-size: 1rem;
             font-style: italic;
             color: var(--rose-deep);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
         }
 
         .art-card-sub {
-            font-size: 0.75rem;
+            font-size: 0.82rem;
             color: var(--text-light);
             letter-spacing: 0.06em;
             margin-bottom: 0.5rem;
@@ -387,14 +388,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.35rem;
-            margin-top: 0.4rem;
+            margin-top: 0.5rem;
         }
 
         .art-card-tag {
-            font-size: 0.65rem;
+            font-size: 0.72rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 0.15rem 0.55rem;
+            padding: 0.18rem 0.6rem;
             border-radius: 99px;
             background: var(--rose-light);
             color: var(--rose-deep);
@@ -407,10 +408,179 @@
             padding: 3rem;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-light);
             display: none;
         }
+
+        /* ── PAGINATION ── */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .page-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-mid);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .page-btn:hover {
+                border-color: var(--rose);
+                color: var(--rose-deep);
+                background: var(--rose-light);
+            }
+
+            .page-btn.active {
+                background: var(--rose-deep);
+                border-color: var(--rose-deep);
+                color: #fff;
+            }
+
+            .page-btn:disabled {
+                opacity: 0.3;
+                cursor: default;
+            }
+
+                .page-btn:disabled:hover {
+                    border-color: var(--border);
+                    color: var(--text-mid);
+                    background: transparent;
+                }
+
+        .page-arrow {
+            font-size: 1rem;
+            width: 38px;
+            height: 38px;
+        }
+
+        /* ── LIGHTBOX ── */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(40, 28, 28, 0.9);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+            .lightbox-overlay.open {
+                display: flex;
+            }
+
+        .lightbox-inner {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            max-width: 1050px;
+            width: 100%;
+            cursor: default;
+            max-height: 90vh;
+        }
+
+        .lightbox-img-wrap {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+            .lightbox-img-wrap img {
+                max-width: 100%;
+                max-height: 82vh;
+                object-fit: contain;
+                border-radius: 8px;
+                display: block;
+            }
+
+        .lightbox-info {
+            flex: 0 0 260px;
+            color: var(--cream);
+            padding-top: 0.5rem;
+        }
+
+        .lightbox-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.2rem;
+            line-height: 1.1;
+        }
+
+        .lightbox-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--rose-light);
+            margin-bottom: 0.2rem;
+        }
+
+        .lightbox-sub {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: rgba(250,247,242,0.55);
+            margin-bottom: 1.4rem;
+        }
+
+        .lightbox-desc {
+            font-size: 0.98rem;
+            line-height: 1.85;
+            color: rgba(250,247,242,0.85);
+            margin-bottom: 1.5rem;
+        }
+
+        .lightbox-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .lightbox-tag {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.65rem;
+            border-radius: 99px;
+            border: 1px solid rgba(212,160,160,0.5);
+            color: var(--rose-light);
+        }
+
+        .lightbox-close {
+            background: none;
+            border: 1px solid rgba(250,247,242,0.3);
+            color: rgba(250,247,242,0.7);
+            border-radius: 99px;
+            padding: 0.45rem 1.3rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+            .lightbox-close:hover {
+                background: rgba(250,247,242,0.12);
+                color: #fff;
+            }
 
         /* ── GAME PORTFOLIO ── */
         #games {
@@ -467,20 +637,20 @@
 
         .game-card-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 400;
             color: var(--text-dark);
         }
 
         .game-card-engine {
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--lavender-deep);
         }
 
         .game-card-desc {
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             line-height: 1.75;
             color: var(--text-mid);
             margin-bottom: 1.25rem;
@@ -494,7 +664,7 @@
         }
 
         .game-tag {
-            font-size: 0.68rem;
+            font-size: 0.75rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             padding: 0.2rem 0.7rem;
@@ -510,7 +680,7 @@
         }
 
         .game-link {
-            font-size: 0.75rem;
+            font-size: 0.82rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--lavender-deep);
@@ -532,7 +702,6 @@
         .design-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
             gap: 1rem;
         }
 
@@ -592,11 +761,10 @@
 
         .design-overlay-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #fff;
         }
 
-        /* placeholder gradient backgrounds */
         .bg-rose-grad {
             background: linear-gradient(135deg, #EDD5D5, #D4A0A0, #C4B8D8);
         }
@@ -638,20 +806,19 @@
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            position: relative;
         }
 
         .portrait-placeholder {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--text-light);
             padding: 1rem;
             text-align: center;
         }
 
         .about-text p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.85;
             color: var(--text-mid);
             margin-bottom: 1.5rem;
@@ -665,7 +832,7 @@
         }
 
         .skill-group h4 {
-            font-size: 0.68rem;
+            font-size: 0.75rem;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--rose-deep);
@@ -677,7 +844,7 @@
         }
 
         .skill-group li {
-            font-size: 0.85rem;
+            font-size: 0.92rem;
             color: var(--text-mid);
             line-height: 1.9;
         }
@@ -712,33 +879,21 @@
             }
 
         .link-icon {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             margin-bottom: 0.3rem;
         }
 
         .link-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 400;
             color: var(--text-dark);
         }
 
         .link-handle {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: var(--text-light);
             letter-spacing: 0.04em;
-        }
-
-        .link-card.yt .link-icon-bg {
-            color: #b07878;
-        }
-
-        .link-card.ig .link-icon-bg {
-            color: #8e7fb0;
-        }
-
-        .link-card.shop .link-icon-bg {
-            color: #6e8c6a;
         }
 
         .contact-block {
@@ -751,14 +906,14 @@
 
             .contact-block h3 {
                 font-family: 'Cormorant Garamond', serif;
-                font-size: 2rem;
+                font-size: 2.2rem;
                 font-weight: 300;
                 margin-bottom: 0.75rem;
                 color: var(--text-dark);
             }
 
             .contact-block p {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 color: var(--text-mid);
                 margin-bottom: 1.75rem;
                 line-height: 1.7;
@@ -766,7 +921,7 @@
 
         .contact-email {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--rose-deep);
             text-decoration: none;
@@ -783,7 +938,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: var(--text-light);
         }
 
@@ -836,14 +991,24 @@
                 gap: 0.5rem;
                 text-align: center;
             }
+
+            .lightbox-inner {
+                flex-direction: column;
+                gap: 1.25rem;
+                overflow-y: auto;
+            }
+
+            .lightbox-info {
+                flex: none;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ── Decorative SVG background ── -->
+    <!-- ── Background SVG ── -->
     <svg class="bg-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-        <!-- Soft watercolor wash blobs -->
         <defs>
             <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#EDD5D5" stop-opacity="0.7" />
@@ -861,32 +1026,22 @@
                 <stop offset="0%" stop-color="#C6D8E8" stop-opacity="0.55" />
                 <stop offset="100%" stop-color="#C6D8E8" stop-opacity="0" />
             </radialGradient>
-            <filter id="blur-heavy">
-                <feGaussianBlur stdDeviation="60" />
-            </filter>
+            <filter id="blur-heavy"><feGaussianBlur stdDeviation="60" /></filter>
         </defs>
-
-        <!-- Large soft blobs - watercolor style -->
         <ellipse cx="180" cy="160" rx="320" ry="280" fill="url(#blob1)" filter="url(#blur-heavy)" />
         <ellipse cx="1280" cy="220" rx="350" ry="300" fill="url(#blob2)" filter="url(#blur-heavy)" />
         <ellipse cx="700" cy="700" rx="400" ry="320" fill="url(#blob3)" filter="url(#blur-heavy)" />
         <ellipse cx="1100" cy="750" rx="280" ry="250" fill="url(#blob4)" filter="url(#blur-heavy)" />
         <ellipse cx="300" cy="600" rx="250" ry="220" fill="url(#blob2)" filter="url(#blur-heavy)" />
-
-        <!-- Delicate botanical line work -->
-        <!-- Stem + leaves, top-left -->
         <g opacity="0.3" stroke="#B07878" stroke-width="1" fill="none">
             <path d="M 80 500 Q 100 420 120 350 Q 140 280 130 200" />
             <path d="M 120 350 Q 80 310 40 290" />
             <path d="M 110 310 Q 145 270 165 240" />
             <path d="M 100 390 Q 60 380 30 360" />
-            <!-- tiny petals -->
             <circle cx="130" cy="200" r="3" fill="#D4A0A0" stroke="none" opacity="0.5" />
             <circle cx="126" cy="193" r="2" fill="#D4A0A0" stroke="none" opacity="0.4" />
             <circle cx="134" cy="193" r="2" fill="#EDD5D5" stroke="none" opacity="0.4" />
         </g>
-
-        <!-- Stem + leaves, top-right -->
         <g opacity="0.25" stroke="#8E7FB0" stroke-width="1" fill="none">
             <path d="M 1360 400 Q 1340 320 1310 240 Q 1290 180 1300 120" />
             <path d="M 1310 240 Q 1350 210 1390 195" />
@@ -895,15 +1050,11 @@
             <circle cx="1295" cy="113" r="2.5" fill="#E2DCF0" stroke="none" opacity="0.4" />
             <circle cx="1305" cy="113" r="2.5" fill="#C4B8D8" stroke="none" opacity="0.4" />
         </g>
-
-        <!-- Bottom right botanical -->
         <g opacity="0.22" stroke="#6E8C6A" stroke-width="0.8" fill="none">
             <path d="M 1400 900 Q 1380 840 1350 780 Q 1320 720 1340 660" />
             <path d="M 1350 780 Q 1390 755 1420 740" />
             <path d="M 1345 730 Q 1305 715 1285 700" />
         </g>
-
-        <!-- Scattered tiny dots (pollen / sparkle) -->
         <g fill="#D4A0A0" opacity="0.35">
             <circle cx="220" cy="280" r="2" />
             <circle cx="350" cy="180" r="1.5" />
@@ -921,15 +1072,13 @@
             <circle cx="1000" cy="800" r="2" />
             <circle cx="1250" cy="680" r="1" />
         </g>
-
-        <!-- Loose gestural brushstroke arcs -->
         <path d="M 0 450 Q 200 380 400 420 Q 600 460 800 400 Q 1000 340 1200 380 Q 1350 410 1440 360"
               stroke="#D4A0A0" stroke-width="0.6" fill="none" opacity="0.2" stroke-dasharray="4 8" />
         <path d="M 0 600 Q 250 560 500 590 Q 750 620 1000 570 Q 1200 530 1440 560"
               stroke="#C4B8D8" stroke-width="0.6" fill="none" opacity="0.18" stroke-dasharray="3 10" />
     </svg>
 
-    <!-- ── Navigation ── -->
+    <!-- ── Nav ── -->
     <nav>
         <a href="#hero" class="nav-logo">Alissa <em>Maxon</em></a>
         <ul class="nav-links">
@@ -946,9 +1095,9 @@
         <p class="hero-eyebrow">Portfolio</p>
         <h1 class="hero-name">Alissa<br /><em>Maxon</em></h1>
         <p class="hero-alias">alissabear01</p>
-        <p class="hero-tagline">Artist, game developer & graphic designer creating worlds with paint, pixels, and code.</p>
+        <p class="hero-tagline">Artist, game developer &amp; graphic designer creating worlds with paint, pixels, and code.</p>
         <div class="hero-roles">
-            <span class="role-pill art">Fine Art & Illustration</span>
+            <span class="role-pill art">Fine Art &amp; Illustration</span>
             <span class="role-pill game">Game Development</span>
             <span class="role-pill design">Graphic Design</span>
         </div>
@@ -967,7 +1116,6 @@
                 <div class="section-divider"></div>
             </div>
 
-            <!-- Filter buttons -->
             <div class="art-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="portraits">Portraits</button>
@@ -978,19 +1126,21 @@
                 <button class="filter-btn" data-filter="sketchbook">Sketchbook</button>
             </div>
 
+            <!--
+              HOW TO ADD A PIECE:
+              1. Copy any art-card block
+              2. Put your image in assets/art/ and update src + alt
+              3. Set data-year (YYYY) — used for chronological sort
+              4. Set data-tags (space-separated): portraits oil-painting fan-art digital traditional sketchbook
+              5. Set data-description, data-title, data-sub, data-tags-display for the lightbox
+              Cards are sorted newest → oldest automatically.
+            -->
             <div class="art-grid" id="art-grid">
 
-                <!--
-      HOW TO ADD YOUR ARTWORK:
-      1. Put your image file in assets/art/
-      2. Copy one of the art-card blocks below
-      3. Replace the placeholder div with:
-         <img src="assets/art/your-file.jpg" alt="Piece title" class="art-card-img">
-      4. Update the title, medium/year, and tags
-      5. Set data-tags to whichever apply (space-separated):
-         portraits  oil-painting  fan-art  digital  traditional  sketchbook
-    -->
-                <div class="art-card" data-tags="portraits traditional">
+                <div class="art-card" data-tags="portraits traditional" data-year="2025"
+                     data-title="Dad" data-sub="Charcoal · Traditional"
+                     data-description="A charcoal portrait of my dad. I love capturing the people closest to me — there's something special about rendering someone you know in traditional media."
+                     data-tags-display="Portraits,Traditional">
                     <img src="assets/art/dad.jpg" alt="Portrait of Dad" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Dad</p>
@@ -1003,10 +1153,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="portraits traditional fan-art">
+                <div class="art-card" data-tags="portraits traditional fan-art" data-year="2024"
+                     data-title="Gandalf" data-sub="Pencil · Traditional"
+                     data-description="A pencil portrait of Gandalf from Lord of the Rings. I wanted to capture his weathered wisdom and quiet intensity in graphite."
+                     data-tags-display="Portraits,Traditional,Fan Art">
                     <img src="assets/art/gandalf.jpg" alt="Gandalf" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Gandalf</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Pencil · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Portraits</span>
@@ -1016,10 +1170,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="oil-painting fan-art">
+                <div class="art-card" data-tags="oil-painting fan-art" data-year="2024"
+                     data-title="Gnaw Pikachu" data-sub="Oil on Canvas · Fan Art"
+                     data-description="An oil painting of the Gnaw Pikachu Pokémon card. I love painting fan art in traditional media — there's something funny and satisfying about taking a silly subject seriously with oil paint."
+                     data-tags-display="Oil Painting,Fan Art">
                     <img src="assets/art/gnawPikachu.JPG" alt="Gnaw Pikachu" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Gnaw Pikachu</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Oil on Canvas · Fan Art</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Oil Painting</span>
@@ -1028,10 +1186,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="oil-painting traditional">
+                <div class="art-card" data-tags="oil-painting traditional" data-year="2023"
+                     data-title="Green Fabric Still Life" data-sub="Oil on Canvas · Traditional"
+                     data-description="A still life study in oil exploring the folds and texture of green fabric. I'm drawn to the way light moves across draped cloth."
+                     data-tags-display="Oil Painting,Traditional">
                     <img src="assets/art/greenFabricStillLife.jpg" alt="Green Fabric Still Life" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Green Fabric Still Life</p>
+                        <p class="art-card-date">2023</p>
                         <p class="art-card-sub">Oil on Canvas · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Oil Painting</span>
@@ -1040,10 +1202,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="digital fan-art">
+                <div class="art-card" data-tags="digital fan-art" data-year="2024"
+                     data-title="Mao Mao" data-sub="Digital · Fan Art"
+                     data-description="A digital fan art piece of Mao Mao. I love the expressive character design of this show and wanted to give it my own illustrative spin."
+                     data-tags-display="Digital,Fan Art">
                     <img src="assets/art/maomao.png" alt="Mao Mao" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Mao Mao</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Digital · Fan Art</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Digital</span>
@@ -1052,10 +1218,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="digital fan-art">
-                    <img src="assets/art/Nami_LC.png" alt="Nami / League of Legends" class="art-card-img">
+                <div class="art-card" data-tags="digital fan-art" data-year="2024"
+                     data-title="Nami" data-sub="Digital · Fan Art"
+                     data-description="A digital portrait of Nami from League of Legends. I focused on soft lighting and a dreamy underwater colour palette."
+                     data-tags-display="Digital,Fan Art">
+                    <img src="assets/art/Nami_LC.png" alt="Nami — League of Legends" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Nami</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Digital · Fan Art</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Digital</span>
@@ -1064,10 +1234,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="digital fan-art portraits">
+                <div class="art-card" data-tags="digital fan-art portraits" data-year="2024"
+                     data-title="Quarterjade" data-sub="Digital · Fan Art"
+                     data-description="A digital portrait of streamer Quarterjade. I enjoy doing portraits of content creators I watch — it's a fun way to combine fan appreciation with portraiture practice."
+                     data-tags-display="Digital,Fan Art,Portraits">
                     <img src="assets/art/quarterjade.jpg" alt="Quarterjade" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Quarterjade</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Digital · Fan Art</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Digital</span>
@@ -1077,10 +1251,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="traditional sketchbook">
+                <div class="art-card" data-tags="traditional sketchbook" data-year="2023"
+                     data-title="Paper Airplanes" data-sub="Graphite · Traditional"
+                     data-description="A graphite study of folded paper airplanes. I'm fascinated by the geometry of simple objects and the way graphite can make something mundane feel monumental."
+                     data-tags-display="Traditional,Sketchbook">
                     <img src="assets/art/paperAirplanes.jpg" alt="Paper Airplanes" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Paper Airplanes</p>
+                        <p class="art-card-date">2023</p>
                         <p class="art-card-sub">Graphite · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Traditional</span>
@@ -1089,10 +1267,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="oil-painting traditional">
-                    <img src="assets/art/rainbowBridge.JPG" alt="Rainbow Bridge — Van Gogh Study" class="art-card-img">
+                <div class="art-card" data-tags="oil-painting traditional" data-year="2023"
+                     data-title="Rainbow Bridge" data-sub="Oil on Canvas · Van Gogh Style"
+                     data-description="My own interpretation of the Rainbow Bridge painted in a Van Gogh-inspired style — swirling brushwork, bold colour, and an emotional sky. One of my favourite pieces."
+                     data-tags-display="Oil Painting,Traditional">
+                    <img src="assets/art/rainbowBridge.JPG" alt="Rainbow Bridge" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Rainbow Bridge</p>
+                        <p class="art-card-date">2023</p>
                         <p class="art-card-sub">Oil on Canvas · Van Gogh Style</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Oil Painting</span>
@@ -1101,10 +1283,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="digital fan-art">
+                <div class="art-card" data-tags="digital fan-art" data-year="2024"
+                     data-title="Terraria" data-sub="Digital · Fan Art"
+                     data-description="A digital fan art piece inspired by Terraria. I reimagined the game's iconic characters with a more illustrative, painterly style."
+                     data-tags-display="Digital,Fan Art">
                     <img src="assets/art/terraria.png" alt="Terraria" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">Terraria</p>
+                        <p class="art-card-date">2024</p>
                         <p class="art-card-sub">Digital · Fan Art</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Digital</span>
@@ -1113,10 +1299,14 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="sketchbook traditional">
+                <div class="art-card" data-tags="sketchbook traditional" data-year="2023"
+                     data-title="White Raven" data-sub="Pen · Traditional"
+                     data-description="A pen sketch of a white raven. I love the simplicity of working in pen — no undoing, just committing to every mark."
+                     data-tags-display="Sketchbook,Traditional">
                     <img src="assets/art/whiteRaven.jpg" alt="White Raven" class="art-card-img">
                     <div class="art-card-body">
                         <p class="art-card-title">White Raven</p>
+                        <p class="art-card-date">2023</p>
                         <p class="art-card-sub">Pen · Traditional</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Sketchbook</span>
@@ -1126,35 +1316,29 @@
                 </div>
 
                 <p class="art-empty" id="art-empty">No pieces in this category yet — check back soon!</p>
-
             </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination"></div>
         </div>
     </section>
 
-    <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const artCards = document.querySelectorAll('#art-grid .art-card');
-    const artEmpty = document.getElementById('art-empty');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        let visible = 0;
-
-        artCards.forEach(card => {
-          const tags = card.dataset.tags || '';
-          const show = filter === 'all' || tags.split(' ').includes(filter);
-          card.classList.toggle('hidden', !show);
-          if (show) visible++;
-        });
-
-        artEmpty.style.display = visible === 0 ? 'block' : 'none';
-      });
-    });
-    </script>
+    <!-- ── Lightbox ── -->
+    <div class="lightbox-overlay" id="lightbox" aria-modal="true" aria-label="Artwork detail">
+        <div class="lightbox-inner" id="lightbox-inner">
+            <div class="lightbox-img-wrap">
+                <img id="lightbox-img" src="" alt="" />
+            </div>
+            <div class="lightbox-info">
+                <p class="lightbox-title" id="lightbox-title"></p>
+                <p class="lightbox-date" id="lightbox-date"></p>
+                <p class="lightbox-sub" id="lightbox-sub"></p>
+                <p class="lightbox-desc" id="lightbox-desc"></p>
+                <div class="lightbox-tags" id="lightbox-tags"></div>
+                <button class="lightbox-close" id="lightbox-close">✕ Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ── Game Design Portfolio ── -->
     <section id="games">
@@ -1165,7 +1349,6 @@
                 <div class="section-divider"></div>
             </div>
             <div class="game-grid">
-                <!-- Game card 1 — replace with your real project details -->
                 <div class="game-card">
                     <div class="game-card-header">
                         <div class="game-icon lavender">🎮</div>
@@ -1187,7 +1370,6 @@
                     </div>
                 </div>
 
-                <!-- Game card 2 -->
                 <div class="game-card">
                     <div class="game-card-header">
                         <div class="game-icon sage">🌿</div>
@@ -1208,7 +1390,6 @@
                     </div>
                 </div>
 
-                <!-- Game card 3 -->
                 <div class="game-card">
                     <div class="game-card-header">
                         <div class="game-icon rose">✨</div>
@@ -1281,9 +1462,9 @@
                     <p>When I'm not working you can find me on YouTube and Instagram as <em>alissabear01</em>, sharing my creative process and the work I love.</p>
                     <div class="skills-grid">
                         <div class="skill-group">
-                            <h4>Art & Illustration</h4>
+                            <h4>Art &amp; Illustration</h4>
                             <ul>
-                                <li>Oil & acrylic painting</li>
+                                <li>Oil &amp; acrylic painting</li>
                                 <li>Digital illustration</li>
                                 <li>Character design</li>
                                 <li>Concept art</li>
@@ -1299,7 +1480,7 @@
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4>Design & Tools</h4>
+                            <h4>Design &amp; Tools</h4>
                             <ul>
                                 <li>Adobe Illustrator</li>
                                 <li>Photoshop</li>
@@ -1341,7 +1522,6 @@
             <div class="contact-block">
                 <h3>Let's work together</h3>
                 <p>Open to full-time roles, freelance projects, and collaborations.<br />I'd love to hear about what you're building.</p>
-                <!-- Replace with your real email -->
                 <a href="mailto:hello@alissabear01.com" class="contact-email">hello@alissabear01.com</a>
             </div>
         </div>
@@ -1353,5 +1533,128 @@
         <p>Designed &amp; built by <a href="#hero">alissabear01</a></p>
     </footer>
 
+    <script>
+        const CARDS_PER_PAGE = 6;
+        let currentPage = 1;
+        let currentFilter = 'all';
+
+        const grid = document.getElementById('art-grid');
+        const emptyMsg = document.getElementById('art-empty');
+        const pagination = document.getElementById('pagination');
+
+        /* ── Sort all cards newest → oldest on load ── */
+        const allCards = Array.from(grid.querySelectorAll('.art-card'));
+        allCards.sort((a, b) => (parseInt(b.dataset.year) || 0) - (parseInt(a.dataset.year) || 0));
+        allCards.forEach(c => grid.insertBefore(c, emptyMsg));
+
+        function getVisibleCards() {
+            return allCards.filter(card => {
+                const tags = card.dataset.tags || '';
+                return currentFilter === 'all' || tags.split(' ').includes(currentFilter);
+            });
+        }
+
+        function renderPage() {
+            const visible = getVisibleCards();
+            const totalPages = Math.max(1, Math.ceil(visible.length / CARDS_PER_PAGE));
+            if (currentPage > totalPages) currentPage = 1;
+
+            const start = (currentPage - 1) * CARDS_PER_PAGE;
+            const end = start + CARDS_PER_PAGE;
+
+            allCards.forEach(card => {
+                const inFilter = visible.includes(card);
+                const idx = visible.indexOf(card);
+                const inPage = idx >= start && idx < end;
+                card.classList.toggle('hidden', !(inFilter && inPage));
+            });
+
+            emptyMsg.style.display = visible.length === 0 ? 'block' : 'none';
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            pagination.innerHTML = '';
+            if (totalPages <= 1) return;
+
+            const prev = document.createElement('button');
+            prev.className = 'page-btn page-arrow';
+            prev.textContent = '←';
+            prev.disabled = currentPage === 1;
+            prev.addEventListener('click', () => { currentPage--; renderPage(); scrollToArt(); });
+            pagination.appendChild(prev);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+                btn.textContent = i;
+                btn.addEventListener('click', () => { currentPage = i; renderPage(); scrollToArt(); });
+                pagination.appendChild(btn);
+            }
+
+            const next = document.createElement('button');
+            next.className = 'page-btn page-arrow';
+            next.textContent = '→';
+            next.disabled = currentPage === totalPages;
+            next.addEventListener('click', () => { currentPage++; renderPage(); scrollToArt(); });
+            pagination.appendChild(next);
+        }
+
+        function scrollToArt() {
+            document.getElementById('art').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        /* ── Filter buttons ── */
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                currentPage = 1;
+                renderPage();
+            });
+        });
+
+        /* ── Lightbox ── */
+        const overlay = document.getElementById('lightbox');
+        const lbInner = document.getElementById('lightbox-inner');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbTitle = document.getElementById('lightbox-title');
+        const lbDate = document.getElementById('lightbox-date');
+        const lbSub = document.getElementById('lightbox-sub');
+        const lbDesc = document.getElementById('lightbox-desc');
+        const lbTags = document.getElementById('lightbox-tags');
+        const lbClose = document.getElementById('lightbox-close');
+
+        function openLightbox(card) {
+            const img = card.querySelector('img');
+            if (!img) return;
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbTitle.textContent = card.dataset.title || '';
+            lbDate.textContent = card.dataset.year || '';
+            lbSub.textContent = card.dataset.sub || '';
+            lbDesc.textContent = card.dataset.description || '';
+            lbTags.innerHTML = (card.dataset.tagsDisplay || '')
+                .split(',').filter(Boolean)
+                .map(t => `<span class="lightbox-tag">${t.trim()}</span>`).join('');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+        }
+
+        allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
+        lbClose.addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', e => { if (!lbInner.contains(e.target)) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        /* ── Init ── */
+        renderPage();
+    </script>
 </body>
 </html>
