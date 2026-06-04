@@ -1030,6 +1030,134 @@
                 text-decoration: none;
             }
 
+        /* ── About portrait photo ── */
+        .about-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        /* ── Graphic Design campaigns ── */
+        .gd-campaigns {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .gd-campaign-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .gd-campaign-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        .gd-campaign-client {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .gd-campaign-divider {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .gd-pair {
+            display: grid;
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        .gd-pair--wide-first { grid-template-columns: 2fr 1fr; }
+        .gd-pair--wide-last  { grid-template-columns: 1fr 2fr; }
+        .gd-pair--equal      { grid-template-columns: 1fr 1fr; }
+
+        .gd-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--parchment);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gd-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(120,80,80,0.12);
+        }
+
+        .gd-pair--wide-first .gd-card-img,
+        .gd-pair--wide-last .gd-card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .gd-pair--equal .gd-card-img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .gd-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(to top, rgba(61,48,48,0.75), transparent);
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gd-card:hover .gd-overlay {
+            transform: translateY(0);
+        }
+
+        .gd-overlay-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.15rem;
+        }
+
+        .gd-overlay-sub {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Eblast lightbox — scrollable tall image */
+        .lightbox-img-wrap--scroll {
+            overflow-y: auto;
+            align-items: flex-start;
+            max-height: 82vh;
+        }
+
+        .lightbox-img-wrap--scroll img {
+            max-height: none !important;
+            width: 100%;
+            max-width: 540px;
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
@@ -1083,6 +1211,18 @@
             .lightbox-info {
                 flex: none;
                 width: 100%;
+            }
+
+            .gd-pair--wide-first,
+            .gd-pair--wide-last,
+            .gd-pair--equal {
+                grid-template-columns: 1fr;
+            }
+
+            .gd-pair--wide-first .gd-card-img,
+            .gd-pair--wide-last .gd-card-img,
+            .gd-pair--equal .gd-card-img {
+                height: 200px;
             }
         }
     </style>
@@ -1435,12 +1575,127 @@
                 <h2 class="section-title">Graphic <em>Design</em></h2>
                 <div class="section-divider"></div>
             </div>
-            <div class="design-grid">
-                <div class="design-card"><div class="design-placeholder bg-rose-grad">Featured project</div><div class="design-overlay"><p class="design-overlay-title">Project Title — Branding</p></div></div>
-                <div class="design-card"><div class="design-placeholder bg-lav-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
-                <div class="design-card"><div class="design-placeholder bg-sage-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
-                <div class="design-card"><div class="design-placeholder bg-blue-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title — Poster</p></div></div>
-                <div class="design-card"><div class="design-placeholder bg-warm-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
+            <div class="gd-campaigns">
+
+                <!-- Campaign 1: Fans to Dream Rigs -->
+                <div class="gd-campaign">
+                    <div class="gd-campaign-header">
+                        <div>
+                            <p class="gd-campaign-name">Fans to Dream Rigs</p>
+                            <p class="gd-campaign-client">AMD × GIGABYTE · Campaign</p>
+                        </div>
+                        <div class="gd-campaign-divider"></div>
+                    </div>
+                    <div class="gd-pair gd-pair--wide-first">
+                        <div class="gd-card"
+                             data-src="assets/graphicDesign/Fans_to_Dream_Rigs_KV-GIGABYTE-Desktop-2560X900.jpg"
+                             data-title="Fans to Dream Rigs — Key Visual"
+                             data-sub="AMD × GIGABYTE · Desktop Banner · 2560×900"
+                             data-description="Hero key visual for the Fans to Dream Rigs campaign in collaboration with AMD and GIGABYTE. Designed as a wide desktop banner for digital placements, featuring event details and bold co-branded visuals."
+                             data-tags-display="Campaign Design,Key Visual,AMD,GIGABYTE">
+                            <img src="assets/graphicDesign/Fans_to_Dream_Rigs_KV-GIGABYTE-Desktop-2560X900.jpg"
+                                 alt="Fans to Dream Rigs Key Visual" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">Key Visual</p>
+                                <p class="gd-overlay-sub">Desktop Banner · 2560×900</p>
+                            </div>
+                        </div>
+                        <div class="gd-card"
+                             data-src="assets/graphicDesign/Fans_to_Dream_Rigs_Social-Post-1600x900.jpg"
+                             data-title="Fans to Dream Rigs — Social Post"
+                             data-sub="AMD × GIGABYTE · Social Post · 1600×900"
+                             data-description="Social media adaptation of the Fans to Dream Rigs campaign key visual, recomposed for social platforms at 1600×900."
+                             data-tags-display="Campaign Design,Social Media,AMD,GIGABYTE">
+                            <img src="assets/graphicDesign/Fans_to_Dream_Rigs_Social-Post-1600x900.jpg"
+                                 alt="Fans to Dream Rigs Social Post" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">Social Post</p>
+                                <p class="gd-overlay-sub">1600×900</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign 2: PC Gaming Week -->
+                <div class="gd-campaign">
+                    <div class="gd-campaign-header">
+                        <div>
+                            <p class="gd-campaign-name">PC Gaming Week</p>
+                            <p class="gd-campaign-client">GIGABYTE · Campaign</p>
+                        </div>
+                        <div class="gd-campaign-divider"></div>
+                    </div>
+                    <div class="gd-pair gd-pair--wide-last">
+                        <div class="gd-card"
+                             data-src="assets/graphicDesign/PC_Gaming_Week_Social-1080x1350.jpg"
+                             data-title="PC Gaming Week — Social Post"
+                             data-sub="GIGABYTE · Social Post · 1080×1350"
+                             data-description="Vertical social media post for GIGABYTE's PC Gaming Week campaign, designed for Instagram and social platforms at 1080×1350."
+                             data-tags-display="Campaign Design,Social Media,GIGABYTE">
+                            <img src="assets/graphicDesign/PC_Gaming_Week_Social-1080x1350.jpg"
+                                 alt="PC Gaming Week Social Post" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">Social Post</p>
+                                <p class="gd-overlay-sub">1080×1350</p>
+                            </div>
+                        </div>
+                        <div class="gd-card"
+                             data-src="assets/graphicDesign/PC_Gaming_Week_KV-GIGABYTE-Desktop-2560X900.jpg"
+                             data-title="PC Gaming Week — Key Visual"
+                             data-sub="GIGABYTE · Desktop Banner · 2560×900"
+                             data-description="Hero key visual for GIGABYTE's PC Gaming Week campaign. Wide desktop banner featuring the campaign's AI Box and GIGABYTE hardware lineup."
+                             data-tags-display="Campaign Design,Key Visual,GIGABYTE">
+                            <img src="assets/graphicDesign/PC_Gaming_Week_KV-GIGABYTE-Desktop-2560X900.jpg"
+                                 alt="PC Gaming Week Key Visual" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">Key Visual</p>
+                                <p class="gd-overlay-sub">Desktop Banner · 2560×900</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign 3: RE9 Email Campaign -->
+                <div class="gd-campaign">
+                    <div class="gd-campaign-header">
+                        <div>
+                            <p class="gd-campaign-name">Resident Evil 9 — Email Campaign</p>
+                            <p class="gd-campaign-client">GIGABYTE · Email Marketing</p>
+                        </div>
+                        <div class="gd-campaign-divider"></div>
+                    </div>
+                    <div class="gd-pair gd-pair--equal">
+                        <div class="gd-card gd-card--eblast"
+                             data-src="assets/graphicDesign/RE9-Eblast.jpg"
+                             data-title="RE9 E-Blast — Version 1"
+                             data-sub="GIGABYTE × Resident Evil 9 · Email Marketing · 600×2365"
+                             data-description="Email marketing blast for GIGABYTE's Resident Evil 9 co-branded campaign. Full-length e-blast designed for newsletter deployment, featuring product promotions alongside RE9 branding."
+                             data-tags-display="Email Marketing,Campaign Design,GIGABYTE"
+                             data-eblast="true">
+                            <img src="assets/graphicDesign/RE9-Eblast.jpg"
+                                 alt="RE9 E-Blast Version 1" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">E-Blast — Version 1</p>
+                                <p class="gd-overlay-sub">600×2365 · Scroll to view full</p>
+                            </div>
+                        </div>
+                        <div class="gd-card gd-card--eblast"
+                             data-src="assets/graphicDesign/RE9-Eblast-2.jpg"
+                             data-title="RE9 E-Blast — Version 2"
+                             data-sub="GIGABYTE × Resident Evil 9 · Email Marketing · 600×2900"
+                             data-description="Second version of the GIGABYTE Resident Evil 9 email marketing blast. Alternate layout featuring different product sections and promotional copy."
+                             data-tags-display="Email Marketing,Campaign Design,GIGABYTE"
+                             data-eblast="true">
+                            <img src="assets/graphicDesign/RE9-Eblast-2.jpg"
+                                 alt="RE9 E-Blast Version 2" class="gd-card-img">
+                            <div class="gd-overlay">
+                                <p class="gd-overlay-title">E-Blast — Version 2</p>
+                                <p class="gd-overlay-sub">600×2900 · Scroll to view full</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1453,7 +1708,7 @@
                 <div class="section-divider"></div>
             </div>
             <div class="about-inner">
-                <div class="about-portrait"><p class="portrait-placeholder">Your photo<br />or illustration<br />here</p></div>
+                <div class="about-portrait"><img src="assets/photos/businessCasual.png" alt="Alissa Maxon" /></div>
                 <div class="about-text">
                     <p>Hi, I'm Alissa — an artist, game developer, and graphic designer with a passion for storytelling through visual mediums. Whether I'm painting a scene, building a game world, or crafting a brand identity, I bring the same care and creative curiosity to everything I make.</p>
                     <p>I'm currently open to opportunities in game studios, creative agencies, and design teams where I can contribute both my technical skills and my illustrative sensibility.</p>
@@ -1592,6 +1847,7 @@
         const overlay = document.getElementById('lightbox');
         const lbInner = document.getElementById('lightbox-inner');
         const lbImg = document.getElementById('lightbox-img');
+        const lbImgWrap = document.querySelector('.lightbox-img-wrap');
         const lbTitle = document.getElementById('lightbox-title');
         const lbDate = document.getElementById('lightbox-date');
         const lbSub = document.getElementById('lightbox-sub');
@@ -1599,28 +1855,60 @@
         const lbTags = document.getElementById('lightbox-tags');
         const lbClose = document.getElementById('lightbox-close');
 
+        function populateLightbox({ src, alt, title, date, sub, desc, tagsDisplay, eblast }) {
+            lbImg.src = src; lbImg.alt = alt || '';
+            lbTitle.textContent = title || '';
+            lbDate.textContent = date || '';
+            lbSub.textContent = sub || '';
+            lbDesc.textContent = desc || '';
+            lbTags.innerHTML = (tagsDisplay || '')
+                .split(',').filter(Boolean)
+                .map(t => `<span class="lightbox-tag">${t.trim()}</span>`).join('');
+            if (eblast) {
+                lbImgWrap.classList.add('lightbox-img-wrap--scroll');
+                lbImgWrap.scrollTop = 0;
+            } else {
+                lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
+            }
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
         function openLightbox(card) {
             const img = card.querySelector('img');
             if (!img) return;
-            lbImg.src = img.src; lbImg.alt = img.alt;
-            lbTitle.textContent = card.dataset.title || '';
-            lbDate.textContent = card.querySelector('.art-card-date')?.textContent || '';
-            lbSub.textContent = card.dataset.sub || '';
-            lbDesc.textContent = card.dataset.description || '';
-            lbTags.innerHTML = (card.dataset.tagsDisplay || '')
-                .split(',').filter(Boolean)
-                .map(t => `<span class="lightbox-tag">${t.trim()}</span>`).join('');
-            overlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
+            populateLightbox({
+                src: img.src, alt: img.alt,
+                title: card.dataset.title,
+                date: card.querySelector('.art-card-date')?.textContent,
+                sub: card.dataset.sub,
+                desc: card.dataset.description,
+                tagsDisplay: card.dataset.tagsDisplay
+            });
+        }
+
+        function openDesignLightbox(card) {
+            if (!card.dataset.src) return;
+            populateLightbox({
+                src: card.dataset.src, alt: card.dataset.title,
+                title: card.dataset.title,
+                date: '',
+                sub: card.dataset.sub,
+                desc: card.dataset.description,
+                tagsDisplay: card.dataset.tagsDisplay,
+                eblast: card.dataset.eblast === 'true'
+            });
         }
 
         function closeLightbox() {
             overlay.classList.remove('open');
             document.body.style.overflow = '';
             lbImg.src = '';
+            lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
         }
 
         allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
+        document.querySelectorAll('.gd-card').forEach(card => card.addEventListener('click', () => openDesignLightbox(card)));
         lbClose.addEventListener('click', closeLightbox);
         overlay.addEventListener('click', e => { if (!lbInner.contains(e.target)) closeLightbox(); });
         /* ── Init ── */
