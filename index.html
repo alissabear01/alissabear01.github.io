@@ -58,7 +58,6 @@
             opacity: 0.38;
         }
 
-        /* ── NAV ── */
         nav {
             position: fixed;
             top: 0;
@@ -69,7 +68,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.25rem 3rem;
-            background: rgba(250, 247, 242, 0.82);
+            background: rgba(250,247,242,0.82);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -112,7 +111,6 @@
             z-index: 1;
         }
 
-        /* ── HERO ── */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -234,7 +232,6 @@
                 background: var(--rose-light);
             }
 
-        /* ── SECTION COMMON ── */
         .section-inner {
             max-width: 1100px;
             margin: 0 auto;
@@ -273,7 +270,6 @@
             background: var(--border);
         }
 
-        /* ── ART FILTERS ── */
         #art {
             background: transparent;
         }
@@ -311,7 +307,6 @@
                 color: #fff;
             }
 
-        /* ── ART GRID ── */
         .art-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -330,7 +325,7 @@
 
             .art-card:hover {
                 transform: translateY(-4px);
-                box-shadow: 0 12px 40px rgba(120, 80, 80, 0.12);
+                box-shadow: 0 12px 40px rgba(120,80,80,0.12);
             }
 
             .art-card.hidden {
@@ -403,7 +398,7 @@
         }
 
         .art-empty {
-            grid-column: 1 / -1;
+            grid-column: 1/-1;
             text-align: center;
             padding: 3rem;
             font-family: 'Cormorant Garamond', serif;
@@ -413,7 +408,6 @@
             display: none;
         }
 
-        /* ── PAGINATION ── */
         .pagination {
             display: flex;
             align-items: center;
@@ -467,13 +461,12 @@
             height: 38px;
         }
 
-        /* ── LIGHTBOX ── */
         .lightbox-overlay {
             display: none;
             position: fixed;
             inset: 0;
             z-index: 999;
-            background: rgba(40, 28, 28, 0.9);
+            background: rgba(40,28,28,0.9);
             align-items: center;
             justify-content: center;
             padding: 2rem;
@@ -582,9 +575,8 @@
                 color: #fff;
             }
 
-        /* ── GAME PORTFOLIO ── */
         #games {
-            background: rgba(196, 184, 216, 0.08);
+            background: rgba(196,184,216,0.08);
         }
 
         .game-grid {
@@ -694,7 +686,6 @@
                 color: var(--text-dark);
             }
 
-        /* ── GRAPHIC DESIGN ── */
         #design {
             background: transparent;
         }
@@ -785,9 +776,8 @@
             background: linear-gradient(135deg, #F2EDE4, #EDD5D5, #D4A0A0);
         }
 
-        /* ── ABOUT ── */
         #about {
-            background: rgba(168, 187, 164, 0.1);
+            background: rgba(168,187,164,0.1);
         }
 
         .about-inner {
@@ -849,7 +839,6 @@
             line-height: 1.9;
         }
 
-        /* ── LINKS / CONTACT ── */
         #links {
             background: transparent;
         }
@@ -875,7 +864,7 @@
 
             .link-card:hover {
                 transform: translateY(-3px);
-                box-shadow: 0 8px 30px rgba(120, 80, 80, 0.1);
+                box-shadow: 0 8px 30px rgba(120,80,80,0.1);
             }
 
         .link-icon {
@@ -929,7 +918,90 @@
             padding-bottom: 2px;
         }
 
-        /* ── FOOTER ── */
+        .contact-form {
+            text-align: left;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.1rem;
+        }
+
+            .form-group label {
+                font-size: 0.75rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--text-mid);
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-family: 'Jost', sans-serif;
+                font-size: 0.95rem;
+                font-weight: 300;
+                color: var(--text-dark);
+                background: var(--cream);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 0.7rem 1rem;
+                outline: none;
+                transition: border-color 0.2s;
+                resize: vertical;
+            }
+
+                .form-group input::placeholder,
+                .form-group textarea::placeholder {
+                    color: var(--text-light);
+                }
+
+                .form-group input:focus,
+                .form-group select:focus,
+                .form-group textarea:focus {
+                    border-color: var(--rose);
+                }
+
+            .form-group select {
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239B8888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                padding-right: 2.5rem;
+            }
+
+        .form-submit {
+            width: 100%;
+            justify-content: center;
+            margin-top: 0.5rem;
+            font-size: 0.88rem;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            margin-top: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--sage-deep);
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         footer {
             position: relative;
             z-index: 1;
@@ -947,7 +1019,6 @@
                 text-decoration: none;
             }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
@@ -1007,31 +1078,18 @@
 </head>
 <body>
 
-    <!-- ── Background SVG ── -->
     <svg class="bg-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
         <defs>
-            <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#EDD5D5" stop-opacity="0.7" />
-                <stop offset="100%" stop-color="#EDD5D5" stop-opacity="0" />
-            </radialGradient>
-            <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#E2DCF0" stop-opacity="0.65" />
-                <stop offset="100%" stop-color="#E2DCF0" stop-opacity="0" />
-            </radialGradient>
-            <radialGradient id="blob3" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#D5E2D3" stop-opacity="0.6" />
-                <stop offset="100%" stop-color="#D5E2D3" stop-opacity="0" />
-            </radialGradient>
-            <radialGradient id="blob4" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#C6D8E8" stop-opacity="0.55" />
-                <stop offset="100%" stop-color="#C6D8E8" stop-opacity="0" />
-            </radialGradient>
+            <radialGradient id="blob1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#EDD5D5" stop-opacity="0.7" /><stop offset="100%" stop-color="#EDD5D5" stop-opacity="0" /></radialGradient>
+            <radialGradient id="blob2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E2DCF0" stop-opacity="0.65" /><stop offset="100%" stop-color="#E2DCF0" stop-opacity="0" /></radialGradient>
+            <radialGradient id="blob3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#D5E2D3" stop-opacity="0.6" /><stop offset="100%" stop-color="#D5E2D3" stop-opacity="0" /></radialGradient>
+            <radialGradient id="blob4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C6D8E8" stop-opacity="0.55" /><stop offset="100%" stop-color="#C6D8E8" stop-opacity="0" /></radialGradient>
             <filter id="blur-heavy"><feGaussianBlur stdDeviation="60" /></filter>
         </defs>
         <ellipse cx="180" cy="160" rx="320" ry="280" fill="url(#blob1)" filter="url(#blur-heavy)" />
         <ellipse cx="1280" cy="220" rx="350" ry="300" fill="url(#blob2)" filter="url(#blur-heavy)" />
         <ellipse cx="700" cy="700" rx="400" ry="320" fill="url(#blob3)" filter="url(#blur-heavy)" />
-        <ellipse cx="1100" cy="750" rx="280" ry="250" fill="url(#blob4)" filter="url(#blur-heavy)" />
+        <ellipse cx="1100" cy="750" rx="280" ry="250" fill="url(#blur-heavy)" />
         <ellipse cx="300" cy="600" rx="250" ry="220" fill="url(#blob2)" filter="url(#blur-heavy)" />
         <g opacity="0.3" stroke="#B07878" stroke-width="1" fill="none">
             <path d="M 80 500 Q 100 420 120 350 Q 140 280 130 200" />
@@ -1072,13 +1130,10 @@
             <circle cx="1000" cy="800" r="2" />
             <circle cx="1250" cy="680" r="1" />
         </g>
-        <path d="M 0 450 Q 200 380 400 420 Q 600 460 800 400 Q 1000 340 1200 380 Q 1350 410 1440 360"
-              stroke="#D4A0A0" stroke-width="0.6" fill="none" opacity="0.2" stroke-dasharray="4 8" />
-        <path d="M 0 600 Q 250 560 500 590 Q 750 620 1000 570 Q 1200 530 1440 560"
-              stroke="#C4B8D8" stroke-width="0.6" fill="none" opacity="0.18" stroke-dasharray="3 10" />
+        <path d="M 0 450 Q 200 380 400 420 Q 600 460 800 400 Q 1000 340 1200 380 Q 1350 410 1440 360" stroke="#D4A0A0" stroke-width="0.6" fill="none" opacity="0.2" stroke-dasharray="4 8" />
+        <path d="M 0 600 Q 250 560 500 590 Q 750 620 1000 570 Q 1200 530 1440 560" stroke="#C4B8D8" stroke-width="0.6" fill="none" opacity="0.18" stroke-dasharray="3 10" />
     </svg>
 
-    <!-- ── Nav ── -->
     <nav>
         <a href="#hero" class="nav-logo">Alissa <em>Maxon</em></a>
         <ul class="nav-links">
@@ -1090,7 +1145,6 @@
         </ul>
     </nav>
 
-    <!-- ── Hero ── -->
     <section id="hero">
         <p class="hero-eyebrow">Portfolio</p>
         <h1 class="hero-name">Alissa<br /><em>Maxon</em></h1>
@@ -1107,7 +1161,6 @@
         </div>
     </section>
 
-    <!-- ── Art Portfolio ── -->
     <section id="art">
         <div class="section-inner">
             <div class="section-header">
@@ -1115,7 +1168,6 @@
                 <h2 class="section-title">Art &amp; <em>Illustration</em></h2>
                 <div class="section-divider"></div>
             </div>
-
             <div class="art-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="portraits">Portraits</button>
@@ -1128,16 +1180,32 @@
 
             <!--
               HOW TO ADD A PIECE:
-              1. Copy any art-card block
-              2. Put your image in assets/art/ and update src + alt
-              3. Set data-year (YYYY) — used for chronological sort
+              1. Copy any art-card block below
+              2. Put image in assets/art/ and update src + alt
+              3. Set data-date="YYYY-MM" for correct chronological sorting (e.g. 2025-07)
               4. Set data-tags (space-separated): portraits oil-painting fan-art digital traditional sketchbook
-              5. Set data-description, data-title, data-sub, data-tags-display for the lightbox
-              Cards are sorted newest → oldest automatically.
+              5. Update data-title, data-sub, data-description, data-tags-display for the lightbox
+              Cards sort newest to oldest automatically based on data-date.
             -->
             <div class="art-grid" id="art-grid">
 
-                <div class="art-card" data-tags="portraits traditional" data-year="2025"
+                <div class="art-card" data-tags="oil-painting fan-art" data-date="2025-08"
+                     data-title="Gnaw Pikachu" data-sub="Oil on Canvas · Fan Art"
+                     data-description="An oil painting of the Gnaw Pikachu Pokémon card. I love painting fan art in traditional media — there's something funny and satisfying about taking a silly subject seriously with oil paint."
+                     data-tags-display="Oil Painting,Fan Art">
+                    <img src="assets/art/gnawPikachu.JPG" alt="Gnaw Pikachu" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Gnaw Pikachu</p>
+                        <p class="art-card-date">August 2025</p>
+                        <p class="art-card-sub">Oil on Canvas · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="portraits traditional" data-date="2025-07"
                      data-title="Dad" data-sub="Charcoal · Traditional"
                      data-description="A charcoal portrait of my dad. I love capturing the people closest to me — there's something special about rendering someone you know in traditional media."
                      data-tags-display="Portraits,Traditional">
@@ -1153,7 +1221,39 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="portraits traditional fan-art" data-year="2024"
+                <div class="art-card" data-tags="oil-painting traditional" data-date="2025-05"
+                     data-title="Green Fabric Still Life" data-sub="Oil on Canvas · Traditional"
+                     data-description="A still life study in oil exploring the folds and texture of green fabric. I'm drawn to the way light moves across draped cloth."
+                     data-tags-display="Oil Painting,Traditional">
+                    <img src="assets/art/greenFabricStillLife.jpg" alt="Green Fabric Still Life" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Green Fabric Still Life</p>
+                        <p class="art-card-date">May 2025</p>
+                        <p class="art-card-sub">Oil on Canvas · Traditional</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="oil-painting traditional" data-date="2026-04"
+                     data-title="Rainbow Bridge" data-sub="Oil on Canvas · Van Gogh Style"
+                     data-description="My own interpretation of the Rainbow Bridge painted in a Van Gogh-inspired style — swirling brushwork, bold colour, and an emotional sky. One of my favourite pieces."
+                     data-tags-display="Oil Painting,Traditional">
+                    <img src="assets/art/rainbowBridge.JPG" alt="Rainbow Bridge" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Rainbow Bridge</p>
+                        <p class="art-card-date">April 2026</p>
+                        <p class="art-card-sub">Oil on Canvas · Van Gogh Style</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="portraits traditional fan-art" data-date="2024-10"
                      data-title="Gandalf" data-sub="Pencil · Traditional"
                      data-description="A pencil portrait of Gandalf from Lord of the Rings. I wanted to capture his weathered wisdom and quiet intensity in graphite."
                      data-tags-display="Portraits,Traditional,Fan Art">
@@ -1170,71 +1270,7 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="oil-painting fan-art" data-year="2024"
-                     data-title="Gnaw Pikachu" data-sub="Oil on Canvas · Fan Art"
-                     data-description="An oil painting of the Gnaw Pikachu Pokémon card. I love painting fan art in traditional media — there's something funny and satisfying about taking a silly subject seriously with oil paint."
-                     data-tags-display="Oil Painting,Fan Art">
-                    <img src="assets/art/gnawPikachu.JPG" alt="Gnaw Pikachu" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Gnaw Pikachu</p>
-                        <p class="art-card-date">August 2025</p>
-                        <p class="art-card-sub">Oil on Canvas · Fan Art</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Oil Painting</span>
-                            <span class="art-card-tag">Fan Art</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="oil-painting traditional" data-year="2023"
-                     data-title="Green Fabric Still Life" data-sub="Oil on Canvas · Traditional"
-                     data-description="A still life study in oil exploring the folds and texture of green fabric. I'm drawn to the way light moves across draped cloth."
-                     data-tags-display="Oil Painting,Traditional">
-                    <img src="assets/art/greenFabricStillLife.jpg" alt="Green Fabric Still Life" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Green Fabric Still Life</p>
-                        <p class="art-card-date">May 2025</p>
-                        <p class="art-card-sub">Oil on Canvas · Traditional</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Oil Painting</span>
-                            <span class="art-card-tag">Traditional</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="digital fan-art" data-year="2024"
-                     data-title="Mao Mao" data-sub="Digital · Fan Art"
-                     data-description="A digital fan art piece of Mao Mao. I love the expressive character design of this show and wanted to give it my own illustrative spin."
-                     data-tags-display="Digital,Fan Art">
-                    <img src="assets/art/maomao.png" alt="Mao Mao" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Mao Mao</p>
-                        <p class="art-card-date">2023</p>
-                        <p class="art-card-sub">Digital · Fan Art</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Digital</span>
-                            <span class="art-card-tag">Fan Art</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="digital fan-art" data-year="2024"
-                     data-title="Nami" data-sub="Digital · Fan Art"
-                     data-description="A digital portrait of Nami. I focused on soft lighting and a dreamy underwater colour palette."
-                     data-tags-display="Digital,Fan Art">
-                    <img src="assets/art/Nami_LC.png" alt="Nami — League of Legends" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Nami</p>
-                        <p class="art-card-date">2022</p>
-                        <p class="art-card-sub">Digital · Fan Art</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Digital</span>
-                            <span class="art-card-tag">Fan Art</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="digital fan-art portraits" data-year="2024"
+                <div class="art-card" data-tags="digital fan-art portraits" data-date="2024-06"
                      data-title="Quarterjade" data-sub="Digital · Fan Art"
                      data-description="A digital portrait of streamer Quarterjade. I enjoy doing portraits of content creators I watch — it's a fun way to combine fan appreciation with portraiture practice."
                      data-tags-display="Digital,Fan Art,Portraits">
@@ -1251,55 +1287,7 @@
                     </div>
                 </div>
 
-                <div class="art-card" data-tags="traditional sketchbook" data-year="2023"
-                     data-title="Paper Airplanes" data-sub="Graphite · Traditional"
-                     data-description="A graphite study of folded paper airplanes. I'm fascinated by the geometry of simple objects and the way graphite can make something mundane feel monumental."
-                     data-tags-display="Traditional,Sketchbook">
-                    <img src="assets/art/paperAirplanes.jpg" alt="Paper Airplanes" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Paper Airplanes</p>
-                        <p class="art-card-date">March 2024</p>
-                        <p class="art-card-sub">Graphite · Traditional</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Traditional</span>
-                            <span class="art-card-tag">Sketchbook</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="oil-painting traditional" data-year="2023"
-                     data-title="Rainbow Bridge" data-sub="Oil on Canvas · Van Gogh Style"
-                     data-description="My own interpretation of the Rainbow Bridge painted in a Van Gogh-inspired style — swirling brushwork, bold colour, and an emotional sky. One of my favourite pieces."
-                     data-tags-display="Oil Painting,Traditional">
-                    <img src="assets/art/rainbowBridge.JPG" alt="Rainbow Bridge" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Rainbow Bridge</p>
-                        <p class="art-card-date">April 2025</p>
-                        <p class="art-card-sub">Oil on Canvas · Van Gogh Style</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Oil Painting</span>
-                            <span class="art-card-tag">Traditional</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="digital fan-art" data-year="2024"
-                     data-title="Terraria" data-sub="Digital · Fan Art"
-                     data-description="A digital fan art piece inspired by Terraria. I reimagined the game's iconic characters with a more illustrative, painterly style."
-                     data-tags-display="Digital,Fan Art">
-                    <img src="assets/art/terraria.png" alt="Terraria" class="art-card-img">
-                    <div class="art-card-body">
-                        <p class="art-card-title">Terraria</p>
-                        <p class="art-card-date">January 2024</p>
-                        <p class="art-card-sub">Digital · Fan Art</p>
-                        <div class="art-card-tags">
-                            <span class="art-card-tag">Digital</span>
-                            <span class="art-card-tag">Fan Art</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="art-card" data-tags="sketchbook traditional" data-year="2023"
+                <div class="art-card" data-tags="sketchbook traditional" data-date="2024-06"
                      data-title="White Raven" data-sub="Pen · Traditional"
                      data-description="A pen sketch of a white raven. I love the simplicity of working in pen — no undoing, just committing to every mark."
                      data-tags-display="Sketchbook,Traditional">
@@ -1315,20 +1303,79 @@
                     </div>
                 </div>
 
+                <div class="art-card" data-tags="traditional sketchbook" data-date="2024-03"
+                     data-title="Paper Airplanes" data-sub="Graphite · Traditional"
+                     data-description="A graphite study of folded paper airplanes. I'm fascinated by the geometry of simple objects and the way graphite can make something mundane feel monumental."
+                     data-tags-display="Traditional,Sketchbook">
+                    <img src="assets/art/paperAirplanes.jpg" alt="Paper Airplanes" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Paper Airplanes</p>
+                        <p class="art-card-date">March 2024</p>
+                        <p class="art-card-sub">Graphite · Traditional</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Traditional</span>
+                            <span class="art-card-tag">Sketchbook</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art" data-date="2024-01"
+                     data-title="Mao Mao" data-sub="Digital · Fan Art"
+                     data-description="A digital fan art piece of Mao Mao. I love the expressive character design of this show and wanted to give it my own illustrative spin."
+                     data-tags-display="Digital,Fan Art">
+                    <img src="assets/art/maomao.png" alt="Mao Mao" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Mao Mao</p>
+                        <p class="art-card-date">January 2024</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art" data-date="2024-01"
+                     data-title="Terraria" data-sub="Digital · Fan Art"
+                     data-description="A digital fan art piece inspired by Terraria. I reimagined the game's iconic characters with a more illustrative, painterly style."
+                     data-tags-display="Digital,Fan Art">
+                    <img src="assets/art/terraria.png" alt="Terraria" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Terraria</p>
+                        <p class="art-card-date">January 2024</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="digital fan-art" data-date="2023-01"
+                     data-title="Nami" data-sub="Digital · Fan Art"
+                     data-description="A digital portrait of Nami. I focused on soft lighting and a dreamy underwater colour palette."
+                     data-tags-display="Digital,Fan Art">
+                    <img src="assets/art/Nami_LC.png" alt="Nami" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Nami</p>
+                        <p class="art-card-date">January 2023</p>
+                        <p class="art-card-sub">Digital · Fan Art</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Digital</span>
+                            <span class="art-card-tag">Fan Art</span>
+                        </div>
+                    </div>
+                </div>
+
                 <p class="art-empty" id="art-empty">No pieces in this category yet — check back soon!</p>
             </div>
-
-            <!-- Pagination -->
             <div class="pagination" id="pagination"></div>
         </div>
     </section>
 
-    <!-- ── Lightbox ── -->
     <div class="lightbox-overlay" id="lightbox" aria-modal="true" aria-label="Artwork detail">
         <div class="lightbox-inner" id="lightbox-inner">
-            <div class="lightbox-img-wrap">
-                <img id="lightbox-img" src="" alt="" />
-            </div>
+            <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt="" /></div>
             <div class="lightbox-info">
                 <p class="lightbox-title" id="lightbox-title"></p>
                 <p class="lightbox-date" id="lightbox-date"></p>
@@ -1340,7 +1387,6 @@
         </div>
     </div>
 
-    <!-- ── Game Design Portfolio ── -->
     <section id="games">
         <div class="section-inner">
             <div class="section-header">
@@ -1350,68 +1396,27 @@
             </div>
             <div class="game-grid">
                 <div class="game-card">
-                    <div class="game-card-header">
-                        <div class="game-icon lavender">🎮</div>
-                        <div>
-                            <p class="game-card-title">Project Title</p>
-                            <p class="game-card-engine">Unity · 2D Platformer</p>
-                        </div>
-                    </div>
+                    <div class="game-card-header"><div class="game-icon lavender">🎮</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Unity · 2D Platformer</p></div></div>
                     <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
-                    <div class="game-tags">
-                        <span class="game-tag">C#</span>
-                        <span class="game-tag">Unity</span>
-                        <span class="game-tag">Solo Dev</span>
-                    </div>
-                    <div class="game-links">
-                        <a href="#" class="game-link">Play</a>
-                        <a href="#" class="game-link">GitHub</a>
-                        <a href="#" class="game-link">Video</a>
-                    </div>
+                    <div class="game-tags"><span class="game-tag">C#</span><span class="game-tag">Unity</span><span class="game-tag">Solo Dev</span></div>
+                    <div class="game-links"><a href="#" class="game-link">Play</a><a href="#" class="game-link">GitHub</a><a href="#" class="game-link">Video</a></div>
                 </div>
-
                 <div class="game-card">
-                    <div class="game-card-header">
-                        <div class="game-icon sage">🌿</div>
-                        <div>
-                            <p class="game-card-title">Project Title</p>
-                            <p class="game-card-engine">Godot · RPG</p>
-                        </div>
-                    </div>
+                    <div class="game-card-header"><div class="game-icon sage">🌿</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Godot · RPG</p></div></div>
                     <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
-                    <div class="game-tags">
-                        <span class="game-tag">GDScript</span>
-                        <span class="game-tag">Godot 4</span>
-                        <span class="game-tag">Pixel Art</span>
-                    </div>
-                    <div class="game-links">
-                        <a href="#" class="game-link">Play</a>
-                        <a href="#" class="game-link">GitHub</a>
-                    </div>
+                    <div class="game-tags"><span class="game-tag">GDScript</span><span class="game-tag">Godot 4</span><span class="game-tag">Pixel Art</span></div>
+                    <div class="game-links"><a href="#" class="game-link">Play</a><a href="#" class="game-link">GitHub</a></div>
                 </div>
-
                 <div class="game-card">
-                    <div class="game-card-header">
-                        <div class="game-icon rose">✨</div>
-                        <div>
-                            <p class="game-card-title">Project Title</p>
-                            <p class="game-card-engine">Game Jam Entry</p>
-                        </div>
-                    </div>
+                    <div class="game-card-header"><div class="game-icon rose">✨</div><div><p class="game-card-title">Project Title</p><p class="game-card-engine">Game Jam Entry</p></div></div>
                     <p class="game-card-desc">Describe your game here — what's the concept, what makes it unique, what was your role in creating it?</p>
-                    <div class="game-tags">
-                        <span class="game-tag">48hr Jam</span>
-                        <span class="game-tag">Narrative</span>
-                    </div>
-                    <div class="game-links">
-                        <a href="#" class="game-link">Play on itch.io</a>
-                    </div>
+                    <div class="game-tags"><span class="game-tag">48hr Jam</span><span class="game-tag">Narrative</span></div>
+                    <div class="game-links"><a href="#" class="game-link">Play on itch.io</a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Graphic Design Portfolio ── -->
     <section id="design">
         <div class="section-inner">
             <div class="section-header">
@@ -1420,31 +1425,15 @@
                 <div class="section-divider"></div>
             </div>
             <div class="design-grid">
-                <div class="design-card">
-                    <div class="design-placeholder bg-rose-grad">Featured project</div>
-                    <div class="design-overlay"><p class="design-overlay-title">Project Title — Branding</p></div>
-                </div>
-                <div class="design-card">
-                    <div class="design-placeholder bg-lav-grad">Add design</div>
-                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
-                </div>
-                <div class="design-card">
-                    <div class="design-placeholder bg-sage-grad">Add design</div>
-                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
-                </div>
-                <div class="design-card">
-                    <div class="design-placeholder bg-blue-grad">Add design</div>
-                    <div class="design-overlay"><p class="design-overlay-title">Project Title — Poster</p></div>
-                </div>
-                <div class="design-card">
-                    <div class="design-placeholder bg-warm-grad">Add design</div>
-                    <div class="design-overlay"><p class="design-overlay-title">Project Title</p></div>
-                </div>
+                <div class="design-card"><div class="design-placeholder bg-rose-grad">Featured project</div><div class="design-overlay"><p class="design-overlay-title">Project Title — Branding</p></div></div>
+                <div class="design-card"><div class="design-placeholder bg-lav-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
+                <div class="design-card"><div class="design-placeholder bg-sage-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
+                <div class="design-card"><div class="design-placeholder bg-blue-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title — Poster</p></div></div>
+                <div class="design-card"><div class="design-placeholder bg-warm-grad">Add design</div><div class="design-overlay"><p class="design-overlay-title">Project Title</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ── About ── -->
     <section id="about">
         <div class="section-inner">
             <div class="section-header">
@@ -1453,48 +1442,21 @@
                 <div class="section-divider"></div>
             </div>
             <div class="about-inner">
-                <div class="about-portrait">
-                    <p class="portrait-placeholder">Your photo<br />or illustration<br />here</p>
-                </div>
+                <div class="about-portrait"><p class="portrait-placeholder">Your photo<br />or illustration<br />here</p></div>
                 <div class="about-text">
                     <p>Hi, I'm Alissa — an artist, game developer, and graphic designer with a passion for storytelling through visual mediums. Whether I'm painting a scene, building a game world, or crafting a brand identity, I bring the same care and creative curiosity to everything I make.</p>
                     <p>I'm currently open to opportunities in game studios, creative agencies, and design teams where I can contribute both my technical skills and my illustrative sensibility.</p>
                     <p>When I'm not working you can find me on YouTube and Instagram as <em>alissabear01</em>, sharing my creative process and the work I love.</p>
                     <div class="skills-grid">
-                        <div class="skill-group">
-                            <h4>Art &amp; Illustration</h4>
-                            <ul>
-                                <li>Oil &amp; acrylic painting</li>
-                                <li>Digital illustration</li>
-                                <li>Character design</li>
-                                <li>Concept art</li>
-                            </ul>
-                        </div>
-                        <div class="skill-group">
-                            <h4>Game Development</h4>
-                            <ul>
-                                <li>Unity / C#</li>
-                                <li>Godot / GDScript</li>
-                                <li>Game design</li>
-                                <li>Level design</li>
-                            </ul>
-                        </div>
-                        <div class="skill-group">
-                            <h4>Design &amp; Tools</h4>
-                            <ul>
-                                <li>Adobe Illustrator</li>
-                                <li>Photoshop</li>
-                                <li>Procreate</li>
-                                <li>Figma</li>
-                            </ul>
-                        </div>
+                        <div class="skill-group"><h4>Art &amp; Illustration</h4><ul><li>Oil &amp; acrylic painting</li><li>Digital illustration</li><li>Character design</li><li>Concept art</li></ul></div>
+                        <div class="skill-group"><h4>Game Development</h4><ul><li>Unity / C#</li><li>Godot / GDScript</li><li>Game design</li><li>Level design</li></ul></div>
+                        <div class="skill-group"><h4>Design &amp; Tools</h4><ul><li>Adobe Illustrator</li><li>Photoshop</li><li>Procreate</li><li>Figma</li></ul></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Links & Contact ── -->
     <section id="links">
         <div class="section-inner">
             <div class="section-header">
@@ -1503,31 +1465,39 @@
                 <div class="section-divider"></div>
             </div>
             <div class="links-grid">
-                <a href="https://youtube.com/@alissabear01" target="_blank" rel="noopener" class="link-card yt">
-                    <div class="link-icon">▶️</div>
-                    <p class="link-name">YouTube</p>
-                    <p class="link-handle">@alissabear01</p>
-                </a>
-                <a href="https://instagram.com/alissabear01" target="_blank" rel="noopener" class="link-card ig">
-                    <div class="link-icon">📸</div>
-                    <p class="link-name">Instagram</p>
-                    <p class="link-handle">@alissabear01</p>
-                </a>
-                <a href="#" target="_blank" rel="noopener" class="link-card shop">
-                    <div class="link-icon">🛍️</div>
-                    <p class="link-name">Shop</p>
-                    <p class="link-handle">alissabear01's store</p>
-                </a>
+                <a href="https://youtube.com/@alissabear01" target="_blank" rel="noopener" class="link-card yt"><div class="link-icon">▶️</div><p class="link-name">YouTube</p><p class="link-handle">@alissabear01</p></a>
+                <a href="https://instagram.com/alissabear01" target="_blank" rel="noopener" class="link-card ig"><div class="link-icon">📸</div><p class="link-name">Instagram</p><p class="link-handle">@alissabear01</p></a>
+                <a href="#" target="_blank" rel="noopener" class="link-card shop"><div class="link-icon">🛍️</div><p class="link-name">Shop</p><p class="link-handle">alissabear01's store</p></a>
             </div>
             <div class="contact-block">
                 <h3>Let's work together</h3>
                 <p>Open to full-time roles, freelance projects, and collaborations.<br />I'd love to hear about what you're building.</p>
-                <a href="mailto:hello@alissabear01.com" class="contact-email">hello@alissabear01.com</a>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mlgkezdk" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cf-name">Name</label>
+                            <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-email">Email</label>
+                            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-subject">Subject</label>
+                        <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or opportunity…" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                    <p class="form-success" id="form-success">✦ Message sent! I'll be in touch soon.</p>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ── Footer ── -->
     <footer>
         <p>© 2026 Alissa Maxon</p>
         <p>Designed &amp; built by <a href="#hero">alissabear01</a></p>
@@ -1542,9 +1512,13 @@
         const emptyMsg = document.getElementById('art-empty');
         const pagination = document.getElementById('pagination');
 
-        /* ── Sort all cards newest → oldest on load ── */
+        // Sort by data-date="YYYY-MM" newest first
         const allCards = Array.from(grid.querySelectorAll('.art-card'));
-        allCards.sort((a, b) => (parseInt(b.dataset.year) || 0) - (parseInt(a.dataset.year) || 0));
+        allCards.sort((a, b) => {
+            const da = a.dataset.date || '0000-00';
+            const db = b.dataset.date || '0000-00';
+            return db.localeCompare(da); // lexicographic on YYYY-MM works perfectly
+        });
         allCards.forEach(c => grid.insertBefore(c, emptyMsg));
 
         function getVisibleCards() {
@@ -1558,17 +1532,12 @@
             const visible = getVisibleCards();
             const totalPages = Math.max(1, Math.ceil(visible.length / CARDS_PER_PAGE));
             if (currentPage > totalPages) currentPage = 1;
-
             const start = (currentPage - 1) * CARDS_PER_PAGE;
             const end = start + CARDS_PER_PAGE;
-
             allCards.forEach(card => {
-                const inFilter = visible.includes(card);
                 const idx = visible.indexOf(card);
-                const inPage = idx >= start && idx < end;
-                card.classList.toggle('hidden', !(inFilter && inPage));
+                card.classList.toggle('hidden', !(idx >= start && idx < end));
             });
-
             emptyMsg.style.display = visible.length === 0 ? 'block' : 'none';
             renderPagination(totalPages);
         }
@@ -1576,14 +1545,10 @@
         function renderPagination(totalPages) {
             pagination.innerHTML = '';
             if (totalPages <= 1) return;
-
             const prev = document.createElement('button');
-            prev.className = 'page-btn page-arrow';
-            prev.textContent = '←';
-            prev.disabled = currentPage === 1;
+            prev.className = 'page-btn page-arrow'; prev.textContent = '←'; prev.disabled = currentPage === 1;
             prev.addEventListener('click', () => { currentPage--; renderPage(); scrollToArt(); });
             pagination.appendChild(prev);
-
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
                 btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
@@ -1591,11 +1556,8 @@
                 btn.addEventListener('click', () => { currentPage = i; renderPage(); scrollToArt(); });
                 pagination.appendChild(btn);
             }
-
             const next = document.createElement('button');
-            next.className = 'page-btn page-arrow';
-            next.textContent = '→';
-            next.disabled = currentPage === totalPages;
+            next.className = 'page-btn page-arrow'; next.textContent = '→'; next.disabled = currentPage === totalPages;
             next.addEventListener('click', () => { currentPage++; renderPage(); scrollToArt(); });
             pagination.appendChild(next);
         }
@@ -1604,7 +1566,6 @@
             document.getElementById('art').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        /* ── Filter buttons ── */
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1615,7 +1576,7 @@
             });
         });
 
-        /* ── Lightbox ── */
+        // Lightbox
         const overlay = document.getElementById('lightbox');
         const lbInner = document.getElementById('lightbox-inner');
         const lbImg = document.getElementById('lightbox-img');
@@ -1629,10 +1590,9 @@
         function openLightbox(card) {
             const img = card.querySelector('img');
             if (!img) return;
-            lbImg.src = img.src;
-            lbImg.alt = img.alt;
+            lbImg.src = img.src; lbImg.alt = img.alt;
             lbTitle.textContent = card.dataset.title || '';
-            lbDate.textContent = card.dataset.year || '';
+            lbDate.textContent = card.querySelector('.art-card-date')?.textContent || '';
             lbSub.textContent = card.dataset.sub || '';
             lbDesc.textContent = card.dataset.description || '';
             lbTags.innerHTML = (card.dataset.tagsDisplay || '')
@@ -1651,10 +1611,38 @@
         allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
         lbClose.addEventListener('click', closeLightbox);
         overlay.addEventListener('click', e => { if (!lbInner.contains(e.target)) closeLightbox(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
         /* ── Init ── */
         renderPage();
+
+        // Contact form — Formspree handles delivery, no email exposed
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async e => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('.form-submit');
+                btn.textContent = 'Sending…';
+                btn.disabled = true;
+                try {
+                    const res = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (res.ok) {
+                        contactForm.reset();
+                        formSuccess.style.display = 'block';
+                        btn.textContent = 'Sent ✦';
+                    } else {
+                        btn.textContent = 'Try again';
+                        btn.disabled = false;
+                    }
+                } catch {
+                    btn.textContent = 'Try again';
+                    btn.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
