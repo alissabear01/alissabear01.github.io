@@ -113,65 +113,17 @@
 
         #hero {
             min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-            padding: 8rem 5rem 4rem 8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8rem 3rem 4rem 8rem;
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-        }
-
-        .hero-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-collage {
-            position: relative;
-            width: 380px;
-            height: 430px;
-            flex-shrink: 0;
-        }
-
-        .hero-collage-img {
-            position: absolute;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 4px solid rgba(250,247,242,0.95);
-            box-shadow: 0 8px 32px rgba(61,48,48,0.16);
-        }
-
-        .hero-collage-img--1 {
-            width: 220px;
-            height: 270px;
-            top: 0;
-            left: 0;
-            transform: rotate(-3.5deg);
-            z-index: 2;
-        }
-
-        .hero-collage-img--2 {
-            width: 185px;
-            height: 210px;
-            top: 25px;
-            right: 10px;
-            transform: rotate(2.5deg);
-            z-index: 3;
-        }
-
-        .hero-collage-img--3 {
-            width: 215px;
-            height: 240px;
-            bottom: 0;
-            left: 60px;
-            transform: rotate(-1deg);
-            z-index: 1;
         }
 
         .hero-eyebrow {
@@ -328,13 +280,6 @@
             background: rgba(212,160,160,0.04);
         }
 
-        .art-card.art-featured {
-            grid-column: span 2;
-        }
-
-        .art-card.art-featured .art-card-img {
-            aspect-ratio: 16/7;
-        }
 
         .art-filters {
             display: flex;
@@ -1230,13 +1175,7 @@
             }
 
             #hero {
-                grid-template-columns: 1fr;
                 padding: 7rem 1.5rem 4rem;
-                gap: 0;
-            }
-
-            .hero-visual {
-                display: none;
             }
 
             .section-inner {
@@ -1246,6 +1185,10 @@
             .about-inner {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+            }
+
+            .art-grid {
+                grid-template-columns: 1fr;
             }
 
             .design-grid {
@@ -1380,13 +1323,6 @@
                 <a href="#links" class="btn btn-outline">Get In Touch</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-collage">
-                <img class="hero-collage-img hero-collage-img--1" src="assets/art/rainbowBridge.JPG" alt="Rainbow Bridge painting" />
-                <img class="hero-collage-img hero-collage-img--2" src="assets/art/gnawPikachu.JPG" alt="Gnaw Pikachu oil painting" />
-                <img class="hero-collage-img hero-collage-img--3" src="assets/art/quarterjade.jpg" alt="Quarterjade digital portrait" />
-            </div>
-        </div>
     </section>
 
     <section id="art">
@@ -1473,6 +1409,22 @@
                         <p class="art-card-title">Rainbow Bridge</p>
                         <p class="art-card-date">April 2026</p>
                         <p class="art-card-sub">Oil on Canvas · Van Gogh Style</p>
+                        <div class="art-card-tags">
+                            <span class="art-card-tag">Oil Painting</span>
+                            <span class="art-card-tag">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-card" data-tags="oil-painting traditional" data-date="2026-03"
+                     data-title="Van Gogh Master Copy" data-sub="Oil on Canvas · Study"
+                     data-description="Oil master copy of Van Gogh — done to understand his brushwork from the inside. Trying to replicate someone else's marks teaches you things you can't get any other way."
+                     data-tags-display="Oil Painting,Traditional">
+                    <img src="assets/art/mastercopyVanGogh.jpeg" alt="Van Gogh Master Copy" class="art-card-img">
+                    <div class="art-card-body">
+                        <p class="art-card-title">Van Gogh Master Copy</p>
+                        <p class="art-card-date">March 2026</p>
+                        <p class="art-card-sub">Oil on Canvas · Study</p>
                         <div class="art-card-tags">
                             <span class="art-card-tag">Oil Painting</span>
                             <span class="art-card-tag">Traditional</span>
@@ -1805,9 +1757,9 @@
                 <div class="section-divider"></div>
             </div>
             <div class="links-grid">
-                <a href="https://youtube.com/@alissabear01" target="_blank" rel="noopener" class="link-card yt"><div class="link-icon">▶️</div><p class="link-name">YouTube</p><p class="link-handle">@alissabear01</p></a>
-                <a href="https://instagram.com/alissabear01" target="_blank" rel="noopener" class="link-card ig"><div class="link-icon">📸</div><p class="link-name">Instagram</p><p class="link-handle">@alissabear01</p></a>
                 <a href="https://www.linkedin.com/in/alissamaxon/" target="_blank" rel="noopener" class="link-card li"><div class="link-icon">💼</div><p class="link-name">LinkedIn</p><p class="link-handle">Alissa Maxon</p></a>
+                <a href="https://instagram.com/alissabear01" target="_blank" rel="noopener" class="link-card ig"><div class="link-icon">📸</div><p class="link-name">Instagram</p><p class="link-handle">@alissabear01</p></a>
+                <a href="https://youtube.com/@alissabear01" target="_blank" rel="noopener" class="link-card yt"><div class="link-icon">▶️</div><p class="link-name">YouTube</p><p class="link-handle">@alissabear01</p></a>
                 <a href="#" target="_blank" rel="noopener" class="link-card shop"><div class="link-icon">🛍️</div><p class="link-name">Shop</p><p class="link-handle">alissabear01's store</p></a>
             </div>
             <div class="contact-block">
@@ -1845,7 +1797,7 @@
     </footer>
 
     <script>
-        const CARDS_PER_PAGE = 6;
+        const CARDS_PER_PAGE = 9;
         let currentPage = 1;
         let currentFilter = 'all';
 
@@ -1879,11 +1831,7 @@
                 const idx = visible.indexOf(card);
                 card.classList.toggle('hidden', !(idx >= start && idx < end));
             });
-            // Feature the first visible card on page 1 only
-            allCards.forEach(c => c.classList.remove('art-featured'));
-            if (currentPage === 1 && visible.length > 0) {
-                visible[0].classList.add('art-featured');
-            }
+
             emptyMsg.style.display = visible.length === 0 ? 'block' : 'none';
             renderPagination(totalPages);
         }
