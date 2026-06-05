@@ -1967,6 +1967,7 @@
             document.body.style.overflow = '';
             lbImg.src = '';
             lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
+            lbImgWrap.scrollTop = 0;
         }
 
         allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
