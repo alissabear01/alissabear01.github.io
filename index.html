@@ -1350,13 +1350,13 @@
     </svg>
 
     <nav>
-        <a href="#hero" class="nav-logo">Alissa <em>Maxon</em></a>
+        <a href="/" class="nav-logo">Alissa <em>Maxon</em></a>
         <ul class="nav-links">
-            <li><a href="#art">Art</a></li>
-            <li><a href="#games">Games</a></li>
-            <li><a href="#design">Design</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#links">Contact</a></li>
+            <li><a href="/art">Art</a></li>
+            <li><a href="/gamedevelopment">Games</a></li>
+            <li><a href="/graphicdesign">Design</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -1372,8 +1372,8 @@
                 <span class="role-pill design">Graphic Design</span>
             </div>
             <div class="hero-cta">
-                <a href="#art" class="btn btn-primary">View My Work</a>
-                <a href="#links" class="btn btn-outline">Get In Touch</a>
+                <a href="/art" class="btn btn-primary">View My Work</a>
+                <a href="/contact" class="btn btn-outline">Get In Touch</a>
             </div>
         </div>
     </section>
@@ -1992,6 +1992,52 @@
         overlay.addEventListener('click', e => { if (!lbInner.contains(e.target)) closeLightbox(); });
         /* ── Init ── */
         renderPage();
+
+        /* ── Clean URL routing ── */
+        const sectionToUrl = { art:'art', games:'gamedevelopment', design:'graphicdesign', about:'about', links:'contact' };
+        const urlToSection = { art:'art', gamedevelopment:'games', graphicdesign:'design', about:'about', contact:'links' };
+
+        // On load: scroll to section if URL has a path (or redirected from 404.html)
+        (function() {
+            const raw = sessionStorage.getItem('spaRedirect') || window.location.pathname;
+            sessionStorage.removeItem('spaRedirect');
+            const path = raw.replace(/^\//, '').replace(/\/$/, '');
+            const sectionId = urlToSection[path];
+            if (sectionId) setTimeout(() => document.getElementById(sectionId)?.scrollIntoView(), 50);
+        })();
+
+        // Intercept internal link clicks → pushState + smooth scroll
+        document.querySelectorAll('a[href^="/"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const path = href.replace(/^\//, '');
+                if (path === '') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, '', '/');
+                    return;
+                }
+                const sectionId = urlToSection[path];
+                if (sectionId) {
+                    e.preventDefault();
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+                    history.pushState(null, '', href);
+                }
+            });
+        });
+
+        // Update URL as sections scroll into view
+        const sectionObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const url = id === 'hero' ? '/' : '/' + (sectionToUrl[id] || '');
+                    if (url) history.replaceState(null, '', url);
+                }
+            });
+        }, { rootMargin: '-10% 0px -85% 0px', threshold: 0 });
+
+        document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
         // Contact form — Formspree handles delivery, no email exposed
         const contactForm = document.getElementById('contact-form');
