@@ -1928,7 +1928,7 @@
                 .map(t => `<span class="lightbox-tag">${t.trim()}</span>`).join('');
             if (eblast) {
                 lbImgWrap.classList.add('lightbox-img-wrap--scroll');
-                lbImgWrap.scrollTop = 0;
+                requestAnimationFrame(() => { lbImgWrap.scrollTop = 0; });
             } else {
                 lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
             }
@@ -1966,8 +1966,8 @@
             overlay.classList.remove('open');
             document.body.style.overflow = '';
             lbImg.src = '';
-            lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
             lbImgWrap.scrollTop = 0;
+            lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
         }
 
         allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
