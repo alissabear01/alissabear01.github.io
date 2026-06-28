@@ -610,6 +610,88 @@
                 color: #fff;
             }
 
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(250,247,242,0.1);
+            border: 1px solid rgba(250,247,242,0.25);
+            color: #fff;
+            border-radius: 50%;
+            width: 2.75rem;
+            height: 2.75rem;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+            .lightbox-nav:hover { background: rgba(250,247,242,0.25); }
+            .lightbox-prev { left: 1rem; }
+            .lightbox-next { right: 1rem; }
+            .lightbox-nav[hidden] { display: none; }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: rgba(250,247,242,0.5);
+        }
+
+        .game-card-preview {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+            .game-card-preview img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.3s;
+            }
+
+            .game-card-preview:hover img { transform: scale(1.03); }
+
+            .game-card-preview-hint {
+                position: absolute;
+                inset: 0;
+                background: rgba(40,28,28,0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.25s;
+            }
+
+            .game-card-preview:hover .game-card-preview-hint {
+                background: rgba(40,28,28,0.45);
+            }
+
+            .game-card-preview-hint span {
+                color: #fff;
+                font-family: 'Jost', sans-serif;
+                font-size: 0.82rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                opacity: 0;
+                transition: opacity 0.25s;
+            }
+
+            .game-card-preview:hover .game-card-preview-hint span { opacity: 1; }
+
         #games {
             background: linear-gradient(160deg, rgba(226,220,240,0.22) 0%, rgba(196,184,216,0.14) 45%, rgba(213,226,211,0.07) 100%);
         }
@@ -1611,6 +1693,9 @@
     </section>
 
     <div class="lightbox-overlay" id="lightbox" aria-modal="true" aria-label="Artwork detail">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" hidden>&#8249;</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" hidden>&#8250;</button>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
         <div class="lightbox-inner" id="lightbox-inner">
             <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt="" /></div>
             <div class="lightbox-info">
@@ -1642,6 +1727,12 @@
                     <div class="game-links"><a href="https://youtu.be/B4AOeeunu8k" target="_blank" rel="noopener" class="game-link">Watch Demo</a></div>
                 </div>
                 <div class="game-card">
+                    <div class="game-card-preview" id="mattanza-preview"
+                         data-gallery='["assets/gamedev/Mattanza/Mattanza.jpg","assets/gamedev/Mattanza/MattanzaScreenshot.png","assets/gamedev/Mattanza/Cards1.jpg","assets/gamedev/Mattanza/Cards2.jpg"]'
+                         data-titles='["Mattanza","Mattanza — Game Board","Mattanza — Card Art (1/2)","Mattanza — Card Art (2/2)"]'>
+                        <img src="assets/gamedev/Mattanza/Mattanza.jpg" alt="Mattanza title card" />
+                        <div class="game-card-preview-hint"><span>View Gallery</span></div>
+                    </div>
                     <div class="game-card-header"><div class="game-icon sage">🃏</div><div><p class="game-card-title">Mattanza</p><p class="game-card-engine">Tabletop Simulator · Card Game</p></div></div>
                     <p class="game-card-desc">A card game based on the Italian mafia — use strategy to kill the don or other players to take control. Players are encouraged to work together early, then sabotage each other to win. I designed the complete ruleset, created all card artwork, and built a 3D model gun as a game prop. Published to the Steam Workshop in 2022.</p>
                     <div class="game-tags"><span class="game-tag">Game Design</span><span class="game-tag">Card Art</span><span class="game-tag">3D Modeling</span><span class="game-tag">Tabletop Simulator</span><span class="game-tag">Solo Dev</span></div>
@@ -1947,8 +2038,47 @@
         const lbDesc = document.getElementById('lightbox-desc');
         const lbTags = document.getElementById('lightbox-tags');
         const lbClose = document.getElementById('lightbox-close');
+        const lbPrev = document.getElementById('lightbox-prev');
+        const lbNext = document.getElementById('lightbox-next');
+        const lbCounter = document.getElementById('lightbox-counter');
+
+        let gallery = [];
+        let galleryTitles = [];
+        let galleryIdx = 0;
+
+        function setGalleryNav() {
+            const multi = gallery.length > 1;
+            lbPrev.hidden = !multi;
+            lbNext.hidden = !multi;
+            lbCounter.textContent = multi ? `${galleryIdx + 1} / ${gallery.length}` : '';
+        }
+
+        function showGalleryImage(idx) {
+            galleryIdx = idx;
+            lbImg.src = gallery[idx];
+            lbImg.alt = galleryTitles[idx] || '';
+            lbTitle.textContent = galleryTitles[idx] || '';
+            lbDate.textContent = '';
+            lbSub.textContent = '';
+            lbDesc.textContent = '';
+            lbTags.innerHTML = '';
+            lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
+            setGalleryNav();
+        }
+
+        function openGalleryLightbox(images, titles, startIdx) {
+            gallery = images;
+            galleryTitles = titles;
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            showGalleryImage(startIdx || 0);
+        }
+
+        lbPrev.addEventListener('click', e => { e.stopPropagation(); showGalleryImage((galleryIdx - 1 + gallery.length) % gallery.length); });
+        lbNext.addEventListener('click', e => { e.stopPropagation(); showGalleryImage((galleryIdx + 1) % gallery.length); });
 
         function populateLightbox({ src, alt, title, date, sub, desc, tagsDisplay, eblast }) {
+            gallery = []; galleryTitles = []; setGalleryNav();
             lbImg.src = src; lbImg.alt = alt || '';
             lbTitle.textContent = title || '';
             lbDate.textContent = date || '';
@@ -1999,12 +2129,26 @@
             lbImg.src = '';
             lbImgWrap.scrollTop = 0;
             lbImgWrap.classList.remove('lightbox-img-wrap--scroll');
+            gallery = []; galleryTitles = []; setGalleryNav();
         }
 
         allCards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
         document.querySelectorAll('.gd-card').forEach(card => card.addEventListener('click', () => openDesignLightbox(card)));
+        document.querySelectorAll('.game-card-preview[data-gallery]').forEach(el => {
+            el.addEventListener('click', () => {
+                const images = JSON.parse(el.dataset.gallery);
+                const titles = JSON.parse(el.dataset.titles || '[]');
+                openGalleryLightbox(images, titles, 0);
+            });
+        });
         lbClose.addEventListener('click', closeLightbox);
-        overlay.addEventListener('click', e => { if (!lbInner.contains(e.target)) closeLightbox(); });
+        overlay.addEventListener('click', e => { if (!lbInner.contains(e.target) && e.target !== lbPrev && e.target !== lbNext) closeLightbox(); });
+        document.addEventListener('keydown', e => {
+            if (!overlay.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft' && gallery.length > 1) showGalleryImage((galleryIdx - 1 + gallery.length) % gallery.length);
+            if (e.key === 'ArrowRight' && gallery.length > 1) showGalleryImage((galleryIdx + 1) % gallery.length);
+        });
         /* ── Init ── */
         renderPage();
 
