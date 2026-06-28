@@ -742,18 +742,23 @@
         }
 
         .game-link {
-            font-size: 0.875rem;
+            font-size: 0.82rem;
+            font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--lavender-deep);
             text-decoration: none;
-            border-bottom: 1px solid var(--lavender);
-            padding-bottom: 1px;
-            transition: color 0.2s;
+            background: var(--lavender-light);
+            border: 1.5px solid var(--lavender);
+            border-radius: 99px;
+            padding: 0.35rem 1rem;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
         }
 
             .game-link:hover {
-                color: var(--text-dark);
+                background: var(--lavender);
+                color: #fff;
+                border-color: var(--lavender-deep);
             }
 
         #design {
